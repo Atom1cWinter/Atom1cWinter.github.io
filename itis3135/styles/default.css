@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;700&display=swap");
+/* Default stylesheet for course content pages */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;700&display=swap"); /* Imported Open Sans for body text and Oswald for headings */
 
 body {
-  background-color: #fdf2f8;
-  color: #4c1d95;
+  background-color: #fdf2f8; /* Soft pink background */
+  color: #4c1d95; /* Deep purple text for contrast */
   font-family: "Open Sans", sans-serif;
   max-width: 850px;
   margin: 0 auto;
@@ -26,31 +28,31 @@ h1,
 h2,
 h3 {
   font-family: "Oswald", sans-serif;
-  color: #701a75;
+  color: #701a75; /* Rich purple for headings */
 }
 
 blockquote {
-  border-left: 4px solid #d946ef;
-  background-color: #fff;
+  border-left: 4px solid #d946ef; /* Pink accent for blockquotes */
+  background-color: #fff; /* White background for blockquotes */
   padding: 20px;
   font-style: italic;
   margin: 20px 0;
 }
 
 footer {
-  background-color: #701a75;
-  color: white;
+  background-color: #701a75; /* Deep purple for footer */
+  color: white; /* White text for contrast */
   padding: 30px;
   text-align: center;
   border-radius: 0 0 15px 15px;
 }
 
 footer a {
-  color: #f5d0fe;
+  color: #f5d0fe; /* Light pink for footer links */
 }
 
 figcaption {
   font-size: 0.9em;
-  color: #86198f;
+  color: #86198f; /* Medium purple for captions */
   font-weight: 600;
 }
