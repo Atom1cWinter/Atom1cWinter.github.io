@@ -9,12 +9,13 @@
     ></script>
     <style>
       body {
-        background-color: #1e1e24;
+        background: linear-gradient(135deg, #1e1e24 0%, #24495e 100%);
+        background-attachment: fixed; /* Gemini suggested doing this to keep the background smooth while scrolling */
         color: #f7f7f2;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         max-width: 900px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 40px;
         line-height: 1.6;
       }
 
@@ -28,7 +29,19 @@
         color: #e2b059;
         display: inline-block;
         vertical-align: middle;
-        margin-right: 15px;
+      }
+
+      h2 {
+        color: #82ccdd;
+        border-left: 5px solid #e2b059;
+        padding-left: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      p {
+        text-align: left;
+        margin-bottom: 20px;
       }
 
       img {
@@ -37,35 +50,41 @@
         width: 60px;
       }
 
-      h2 {
-        color: #607d8b;
-        border-left: 5px solid #e2b059;
-        padding-left: 10px;
-      }
-
       ul {
-        list-style-type: square;
-        color: #e2b059;
+        list-style-type: "🦉 "; /* Gemini created this owl emoji to use */
+        padding-left: 25px;
       }
 
       li {
-        color: #f7f7f2;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        font-weight: 500;
       }
 
       section {
-        background-color: #2d2d35;
-        padding: 20px;
-        border-radius: 8px;
+        background-color: rgba(
+          96,
+          125,
+          139,
+          0.2
+        ); /* Semi-transparent slate recommended by Gemini */
+        border: 1px solid #607d8b;
+        padding: 25px;
+        border-radius: 4px;
         margin-bottom: 40px;
       }
 
+      section h3 {
+        color: #e2b059;
+        margin-top: 0;
+      }
+
       footer {
-        text-align: center;
-        font-size: 0.9em;
-        margin-top: 50px;
-        border-top: 1px solid #607d8b;
+        text-align: right;
+        font-size: 0.85em;
+        margin-top: 60px;
+        border-top: 1px solid rgba(226, 176, 89, 0.3);
         padding-top: 20px;
+        color: #82ccdd;
       }
     </style>
   </head>
