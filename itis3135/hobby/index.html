@@ -17,25 +17,24 @@
         box-sizing: border-box;
       }
 
+      .container {
+        width: 80%;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
       body {
         background: radial-gradient(circle, #2d3545 0%, #212733 100%);
         color: #f0edf2;
         font-family: "Century Gothic", AppleGothic, sans-serif;
         margin: 0;
         min-height: 100vh;
-        /* Using Flexbox for layout positioning instead of center-align */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
 
       header,
       main,
       footer {
-        width: 80%;
-        max-width: 900px;
         padding: 20px;
-        /* Ensuring content stays left-aligned within the container */
         text-align: left;
       }
 
@@ -73,11 +72,9 @@
       }
 
       main {
-        flex-grow: 1;
         background: rgba(255, 255, 255, 0.05);
         margin: 20px 0;
         border-radius: 8px;
-        padding: 30px;
       }
 
       h2 {
@@ -119,58 +116,60 @@
   </head>
 
   <body>
-    <header>
-      <h1>Overwatch</h1>
-      <nav>
-        <a href="#" onclick="showSection('what')">What</a> <span> ⚔️ </span>
-        <a href="#" onclick="showSection('who')">Who</a> <span> ⚔️ </span>
-        <a href="#" onclick="showSection('when')">When</a>
-        <a href="#" onclick="showSection('where')">Where</a>
-        <a href="#" onclick="showSection('how')">How</a>
-        <a href="#" onclick="showSection('why')">Why</a>
-        <a href="#" onclick="showSection('ai-prompts')">AI Prompts</a>
-      </nav>
-    </header>
+    <div class="container">
+      <header>
+        <h1>Overwatch</h1>
+        <nav>
+          <a href="#" onclick="showSection('what')">What</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('who')">Who</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('when')">When</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('where')">Where</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('how')">How</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('why')">Why</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('ai-prompts')">AI Prompts</a>
+        </nav>
+      </header>
 
-    <main>
-      <section id="what">
-        <h2>What is Overwatch?</h2>
-        <p>Content item 1...</p>
-        <p>Content item 2...</p>
-        <figure>
-          <img src="images/placeholder.jpg" alt="Overwatch Gameplay" />
-          <figcaption>Description of the image.</figcaption>
-        </figure>
-        <p><i>AI Prompt: [Your prompt here]</i></p>
-      </section>
+      <main>
+        <section id="what">
+          <h2>What is Overwatch?</h2>
+          <p>Content item 1...</p>
+          <p>Content item 2...</p>
+          <figure>
+            <img src="images/placeholder.jpg" alt="Overwatch Gameplay" />
+            <figcaption>Description of the image.</figcaption>
+          </figure>
+          <p><i>AI Prompt: [Your prompt here]</i></p>
+        </section>
 
-      <section id="who" style="display: none">
-        <h2>Who</h2>
-      </section>
-      <section id="when" style="display: none">
-        <h2>When</h2>
-      </section>
-      <section id="where" style="display: none">
-        <h2>Where</h2>
-      </section>
-      <section id="how" style="display: none">
-        <h2>How</h2>
-      </section>
-      <section id="why" style="display: none">
-        <h2>Why</h2>
-      </section>
-      <section id="ai-prompts" style="display: none">
-        <h2>AI Prompts</h2>
-        <p>List your prompts used for code or text here [cite: 28, 51].</p>
-      </section>
-    </main>
+        <section id="who" style="display: none">
+          <h2>Who</h2>
+        </section>
+        <section id="when" style="display: none">
+          <h2>When</h2>
+        </section>
+        <section id="where" style="display: none">
+          <h2>Where</h2>
+        </section>
+        <section id="how" style="display: none">
+          <h2>How</h2>
+        </section>
+        <section id="why" style="display: none">
+          <h2>Why</h2>
+        </section>
+        <section id="ai-prompts" style="display: none">
+          <h2>AI Prompts</h2>
+          <p>List your prompts used for code or text here [cite: 28, 51].</p>
+        </section>
+      </main>
 
-    <footer>
-      <p>Designed by <a href="../../index.html">Dingle Design Firm</a></p>
-      <div class="validation">
-        <p>Validation: HTML5 | CSS3 | Accessibility</p>
-      </div>
-    </footer>
+      <footer>
+        <p>Designed by <a href="../../index.html">Dingle Design Firm</a></p>
+        <div class="validation">
+          <p>Validation: HTML5 | CSS3 | Accessibility</p>
+        </div>
+      </footer>
+    </div>
 
     <script>
       function showSection(sectionId) {
