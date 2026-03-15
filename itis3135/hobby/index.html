@@ -24,8 +24,11 @@
       }
 
       body {
-        background: radial-gradient(circle, #2d3545 0%, #212733 100%);
-        color: #f0edf2;
+        /* 1. Background: Light Radial Gradient (Overwatch White to Ice Grey) */
+        background: radial-gradient(circle, #ffffff 0%, #e2e8f0 100%);
+        background-attachment: fixed;
+        /* 2. Text Color: Deep blue-grey for readability on light background */
+        color: #334155;
         font-family: "Century Gothic", AppleGothic, sans-serif;
         margin: 0;
         min-height: 100vh;
@@ -39,6 +42,7 @@
       }
 
       header {
+        /* 3. Contrast: Branding Orange remains consistent */
         border-bottom: 3px solid #f99e1a;
       }
 
@@ -57,24 +61,27 @@
       }
 
       nav a {
-        color: #f99e1a;
+        color: #405275; /* Darker navy for better link contrast */
         text-decoration: none;
         font-weight: bold;
       }
 
       nav a:hover {
-        color: #ffffff;
+        color: #f99e1a;
         border-bottom: 2px solid #f99e1a;
       }
 
       nav span {
-        color: #405275;
+        color: #cbd5e1; /* Subtle divider color */
       }
 
       main {
-        background: rgba(255, 255, 255, 0.05);
+        /* 4. Background: Slight glass-morphism effect */
+        background: rgba(255, 255, 255, 0.6);
         margin: 20px 0;
         border-radius: 8px;
+        border: 1px solid #cbd5e1;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
       }
 
       h2 {
@@ -84,10 +91,11 @@
       }
 
       figure {
-        border: 1px solid #405275;
+        /* 5. Proximity: Borders updated to light blue-grey */
+        border: 1px solid #cbd5e1;
+        background-color: #ffffff;
         padding: 15px;
         margin: 20px 0;
-        /* Positioning figure using margins rather than centering */
         width: fit-content;
       }
 
@@ -100,8 +108,9 @@
 
       footer {
         font-size: 0.9em;
-        border-top: 1px solid #405275;
+        border-top: 1px solid #cbd5e1;
         margin-top: auto;
+        color: #64748b;
       }
 
       .validation {
@@ -109,7 +118,7 @@
       }
 
       .validation p {
-        color: #405275;
+        color: #94a3b8;
         font-weight: bold;
       }
     </style>
