@@ -29,6 +29,44 @@
         margin: 0 auto;
       }
 
+      .float-left {
+        float: left;
+        margin-right: 20px;
+      }
+
+      .float-right {
+        float: right;
+        margin-left: 20px;
+      }
+
+      .center-fig {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .right-fig {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .small-img {
+        width: 250px;
+        height: auto;
+      }
+
+      .large-img {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+      }
+
+      .video-frame {
+        border: none;
+        width: 100%;
+        max-width: 1080px;
+        aspect-ratio: 16 / 9;
+      }
+
       body {
         /* Background: Hero Blue (#218ffe) | Outer: Deep Royal Navy (#1a2e47) */
         background: radial-gradient(circle at center, #218ffe 0%, #1a2e47 100%);
@@ -134,6 +172,12 @@
         color: #64748b;
         font-weight: bold;
       }
+
+      main section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
     </style>
   </head>
 
@@ -164,12 +208,22 @@
             skills, and teamwork.
           </p>
           <figure>
-            <img
-              src="images/ScrimModeBild.png"
-              alt="An image of overwatch heroes with the words 'Scrim Mode'"
-            />
+            <iframe
+              class="video-frame"
+              src="https://www.youtube.com/embed/bK6MiOWi2mA"
+              title="Overwatch Scrimming Guide"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+              "
+              allowfullscreen
+            ></iframe>
             <figcaption>
-              An image of overwatch heroes with the words 'Scrim Mode'.
+              An introductory guide to the world of Overwatch scrimming.
             </figcaption>
           </figure>
           <p>
@@ -181,7 +235,6 @@
             trying new things, and improving, so don't worry about being perfect
             and just focus on having fun and learning!
           </p>
-          <p><i>AI Prompt: [Your prompt here]</i></p>
         </section>
 
         <section id="who" style="display: none">
@@ -416,6 +469,15 @@
             playing scrims. There are <b>tons</b> of them out there, but the
             main ones you'll want to check out are:
           </p>
+          <figure class="float-right small-img" style="margin-top: -90px">
+            <img
+              src="images/ScrimFinderIcon.png"
+              alt="The logo for the Scrim Finder Discord server"
+            />
+            <figcaption>
+              The logo for the Scrim Finder Discord server.
+            </figcaption>
+          </figure>
           <ul>
             <li>
               <a href="https://discord.gg/Qt6phMxR">Competitive Overwatch</a>
@@ -448,50 +510,236 @@
         </section>
         <section id="how" style="display: none">
           <h2>How are Overwatch Scrims played?</h2>
-          <p>Scrims are always played in private, custom lobbies with some pretty set settings for them.
-            That's kind of putting the cart before the horse however. Before we talk about how to play scrims,
-            it's important that we first talk about <b>finding a team</b>. <br><br>
-            The best way to find a team is to hop into one of the scrimming discords (you can find links to those
-            here (make this a link to "where")) and advertize yourself. Unfortunately, though, advertizing
-            for scrims can be pretty confusing if you've never dealt with it so let's go over some things first.
+          <p>
+            Scrims are always played in private, custom lobbies with some pretty
+            set settings for them. That's kind of putting the cart before the
+            horse however. Before we talk about how to play scrims, it's
+            important that we first talk about <b>finding a team</b>.
+            <br /><br />
+            The best way to find a team is to hop into one of the scrimming
+            discords (you can find links to those here (make this a link to
+            "where")) and advertize yourself. Unfortunately, though, advertizing
+            for scrims can be pretty confusing if you've never dealt with it so
+            let's go over some things first.
           </p>
-          <figure><img src="images/LFTexample.png" alt="An example of a 'Looking for Team' post"/> </figure>
-          <figcaption>An example of a "Looking for Team" post</figcaption>
-          <p>Confusing righ? Let's go through and explain each part of that post</p>
+          <h3>LFT / LFP Posts</h3>
+          <figure>
+            <img
+              src="images/LFTexample.png"
+              alt="An example of a 'Looking for Team' post"
+            />
+            <figcaption>An example of a "Looking for Team" post</figcaption>
+          </figure>
+
+          <p>
+            Confusing right? Let's go through and explain each part of that post
+          </p>
           <ul>
-            <li><strong>LFT (Looking For Team): </strong>This means this player is a "free agent" who's looking for
-            a team to join for scrims</li>
-            <li><strong>HSDPS: </strong>This is just the player advertizing their role. You might see any of the roles mentioned 
-            here (make that a link to "who") in this spot instead.</li>
-            <li><strong>4.3k-4.5k: </strong>This is the player's skill rating and it's a bit confusing at the start.
-            This number can range anywhere from 0-5000, it's based off of their competitive rank, and it represents 
-            their "skill level".
-          <ul>
-            <li><strong>0-1.5k: </strong>This is roughly bronze</li>
-            <li><strong>1.5k-2k: </strong>This is roughly silver</li>
-            <li><strong>2k-2.5k: </strong>This is roughly gold</li>
-            <li><strong>2.5k-3k: </strong>This is roughly platinum</li>
-            <li><strong>3k-3.5k: </strong>This is roughly diamond</li>
-            <li><strong>3.5k-4k: </strong>This is roughly masters</li>
-            <li><strong>4k-4.5k: </strong>This is roughly grandmasters</li>
-            <li><strong>4.5k+: </strong> This is roughly champion or top 500</li>
-          </ul></li>
+            <li>
+              <strong>LFT (Looking For Team): </strong>This means this player is
+              a "free agent" who's looking for a team to join for scrims
+            </li>
+            <li>
+              <strong>HSDPS: </strong>This is just the player advertizing their
+              role. You might see any of the roles mentioned here (make that a
+              link to "who") in this spot instead.
+            </li>
+            <li>
+              <strong>4.3k-4.5k: </strong>This is the player's skill rating and
+              it's a bit confusing at the start. This number can range anywhere
+              from 0-5000, it's based off of their competitive rank, and it
+              represents their "skill level":
+              <ul>
+                <li><strong>0-1.5k: </strong>~Bronze</li>
+                <li><strong>1.5k-2k: </strong>~Silver</li>
+                <li><strong>2k-2.5k: </strong>~Gold</li>
+                <li><strong>2.5k-3k: </strong>~Platinum</li>
+                <li><strong>3k-3.5k: </strong>~Diamond</li>
+                <li><strong>3.5k-4k: </strong>~Masters</li>
+                <li><strong>4k-4.5k: </strong>~Grandmasters</li>
+                <li><strong>4.5k+: </strong> ~Champion or Top 500</li>
+              </ul>
+              <p>
+                The range for your skill rating is whatever experience you have
+                in scrims already. If you've played scrims with a team that's
+                around 4.5k, then you'd put your current skill rating up to the
+                highest you've played against. <br />
+                If you've never played scrims before, you'll just put your
+                current competitive skill rating in this value. <br />Don't
+                worry too much about this value, it's just to give teams an idea
+                of your skill level.
+              </p>
+            </li>
+            <li>
+              <strong>"Soj,Emre,Cass,Bastion...": </strong>This is just a list
+              of this players hero pool and you should just enter any heroes you
+              feel comfortable playing here.
+            </li>
           </ul>
+          <p>
+            Everything past that is just extra information you want to convey to
+            any teams that look at your post. It can be pretty much anything you
+            want but most players will include any experience they've had, what
+            times they're available, or any other information they think might
+            be relevant.
+          </p>
+          <figure>
+            <img
+              src="images/LFPexample.png"
+              alt="An example of a 'Looking for Players' post"
+            />
+            <figcaption>An example of a "Looking for Players" post</figcaption>
+          </figure>
+          <p>
+            This is pretty similar to what a "Looking for Team" post is, but
+            instead of looking for a team, this is a team looking for a player.
+            Usually, the person making the post is either the team captain (this
+            isn't an official role) or a team's coach (if they happen to have
+            one). We'll go through any important information in this post as
+            well:
+          </p>
           <ul>
-            <li>Finding a team</li>
-            <li>Preparing for a scrim</li>
-            <li>The match settings for a scrim</li>
+            <li>
+              <strong>LFP (Looking for Player(s)): </strong> Exactly as it says,
+              it's a team looking for a player(s) to fill whatever spots they're
+              looking for
+            </li>
+            <li>
+              <strong>NA: </strong>This is the region that this team plays in.
+              It's impoortant for when you're playing scrims to be as close to
+              the other players you have as possible to minimize ping and
+              latency being factors in the scrim. It's also really useful for
+              figuring out what times players are available. There are pretty
+              much only 3 regions available: <b>NA</b>, <b>EU</b>, and
+              <b>APAC</b>.
+            </li>
+            <li>
+              <strong>PC: </strong>This is just where the platform a team plays
+              on will go. There are scrims for console players as well so some
+              other things that might go in this field are <b>PC</b>, <b>PS</b>,
+              <b>Xbox</b>, <b>Switch</b>, or <b>Mixed</b> if a team happens to
+              be playing on multiple platforms or with players on different
+              platforms.
+            </li>
+            <li>
+              <strong>Roles Needed: </strong>This is pretty self explanatory
+              too; it's just all of the roles a particular team is looking for.
+              These will be the same roles mentioned in "who" here
+            </li>
+            <li>
+              <strong>Player Criteria: </strong>These are the more specific
+              criteria that a team is looking for in a player. Usually, this
+              will be things like rank, region, availability, and any other
+              expectations a team might have of their players.
+            </li>
           </ul>
+          <p>
+            Once you've found yourself a team, all that's left is finding a
+            scrim. This will usually be done by your team captain or coach and
+            will usually be done by posting in one of the scrim discords (links
+            to those can be found here (make this a link to "where")) with a
+            post that looks something like this:
+          </p>
+          <h4>Finding Scrims (LFS):</h4>
+          <figure>
+            <img
+              src="images/LFSexample.png"
+              alt="An example of a 'Looking for Scrim' post"
+            />
+            <figcaption>An example of a "Looking for Scrim" post</figcaption>
+          </figure>
+          <p>
+            We've already talked about most of the information in this post so
+            I'm not gonna go over it much. The only really important points you
+            need to know from this are the region, the skill rating, and the
+            time. Your team will either make one of these posts when they want
+            to scrim or will respond with a DM to another team's post. Once a
+            scrim is setup, the post will be crossed out or deleted.
+            <br /><br />Once that's all done, it's time to play your scrim! So
+            let's talk about the settings for the match and how to set up the
+            lobby.
+          </p>
+          <h4>Scrim Match Settings</h4>
+          <p>
+            Scrims have a bit of varience in their match settings based off of
+            how many players, what kind of maps are being played, and how many
+            maps are being played. While match settings for scrims are pretty
+            in-depth and <i>very</i> important, there are thankfully import
+            codes available to streamline the process. These are some of the
+            more popular ones:
+          </p>
+          <ul>
+            <li>
+              <strong>DKEEH (ScrimTime): </strong>This is the most popular
+              import code for scrims and is pretty the only one you'll need. It
+              handles just about everything from setting up the lobby to
+              collecting player performance data.
+            </li>
+            <li>
+              <strong>TEYSH (Seita Scrim Lobby): </strong>This is a
+              <i>very</i> dated import code for old scrim lobbies, but you'll
+              occasionally still have some teams using it. Generally, it's best
+              to avoid it though.
+            </li>
+            <li>
+              <strong>OPP1T (ScrimTime Lite): </strong>This is a simplified
+              version of the ScrimTime lobby that doesn't collect as much player
+              performance data and doesn't allow for quite as many spectator
+              slots. Good if you don't have a coach to watch your game or just
+              wanna be able to set up a scrim really easily
+            </li>
+            <li>
+              <strong>A8XVJ (Scrimmie): </strong>This is a newer import code
+              that offers a huge amount of customization and control on the
+              backend for any casters, spectators, or coaches to be able to view
+              information about the match at any real point. It's incredibly
+              powerful and has started to see some use in the OWCS (basically
+              the professional league of OW)
+            </li>
+          </ul>
+          <p>
+            Setting up a scrim with one of these import codes tends to be as
+            easy as going into a custom game, hitting create, clicking settings,
+            and impoting the code in. You can change what maps are being played
+            as well and adjust any other settings that might be relavant for
+            your scrim. <br /><br /><br />And that's it! That's everything
+            you'll need to do to get starting scrimming! Good luck and have fun!
+          </p>
         </section>
         <section id="why" style="display: none">
           <h2>Why play Overwatch Scrims?</h2>
-          <p>Fill this in with information on the following topics:</p>
-          <ul>
-            <li>Improving your gameplay</li>
-            <li>Improving your teamwork</li>
-            <li>Experiencing a true team competitive environment</li>
-            <li>Having fun and finding friends</li>
-          </ul>
+          <figure class="float-right" style="width: 450px; margin-top: -60px">
+            <img
+              src="images/ScrimModeBild.png"
+              alt="An image of overwatch heroes with the words 'Scrim Mode'"
+            />
+            <figcaption>
+              An image of overwatch heroes with the words 'Scrim Mode'.
+            </figcaption>
+          </figure>
+          <p>
+            Players have a <i>lot</i> of different reasons to participate in
+            scrims, ranging anywhere from just wanting to have fun, to finding
+            friends, to improving their gameplay, to even using it as a stepping
+            stone to go pro. Scrims are a great way of getting a true
+            competitive experience in OW and people come to this community for
+            many different reasons.
+          </p>
+
+          <p>
+            For me, I started scrimming because a friend invited me to start and
+            because it was a good way to improve my gameplay (and stop being so
+            cocky). It also helped me meet some great people and get a bit of
+            time trying out in the OW professional scene. It's brought a lot of
+            great memories to me and a lot of improvements to my skills and
+            mindset over the years.
+          </p>
+          <p>
+            So...no matter what your reason for joining the scrimming community
+            is, you're bound to find others who share your same goals and who
+            can help you reach them. Welcome to the scrimming community; good
+            luck and have fun!
+          </p>
         </section>
         <section id="ai-prompts" style="display: none">
           <h2>AI Prompts</h2>
