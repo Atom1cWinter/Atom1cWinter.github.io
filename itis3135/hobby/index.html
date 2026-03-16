@@ -37,6 +37,7 @@
       .float-right {
         float: right;
         margin-left: 20px;
+        clear: right;
       }
 
       .center-fig {
@@ -104,6 +105,18 @@
         align-items: center;
       }
 
+      a {
+        color: #f99e1a;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #ffcc80;
+        text-decoration: underline;
+      }
+
       nav a {
         color: #ffffff;
         text-decoration: none;
@@ -114,6 +127,7 @@
       nav a:hover {
         color: #f99e1a;
         border-bottom: 2px solid #f99e1a;
+        text-decoration: none;
       }
 
       nav span {
@@ -144,8 +158,9 @@
         border: 1px solid #cbd5e1;
         background-color: #f8fafc;
         padding: 15px;
-        margin: 20px 0;
+        margin: 10px 0 20px 20px;
         width: fit-content;
+        max-width: 100%;
       }
 
       img {
@@ -168,15 +183,23 @@
         font-weight: bold;
       }
 
+      footer a:hover {
+        text-decoration: underline;
+        color: #ffffff;
+      }
+
       .validation p {
         color: #64748b;
         font-weight: bold;
       }
 
-      main section::after {
-        content: "";
-        display: table;
-        clear: both;
+      main section {
+        overflow: auto;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      ul {
+        list-style-position: inside;
       }
     </style>
   </head>
@@ -555,10 +578,11 @@
             important that we first talk about <b>finding a team</b>.
             <br /><br />
             The best way to find a team is to hop into one of the scrimming
-            discords (you can find links to those here (make this a link to
-            "where")) and advertize yourself. Unfortunately, though, advertizing
-            for scrims can be pretty confusing if you've never dealt with it so
-            let's go over some things first.
+            discords (you can find links to those
+            <a href="#" onclick="showSection('where')">here</a>) and advertize
+            yourself. Unfortunately, though, advertizing for scrims can be
+            pretty confusing if you've never dealt with it so let's go over some
+            things first.
           </p>
           <h3>LFT / LFP Posts</h3>
           <figure>
@@ -675,8 +699,9 @@
             Once you've found yourself a team, all that's left is finding a
             scrim. This will usually be done by your team captain or coach and
             will usually be done by posting in one of the scrim discords (links
-            to those can be found here (make this a link to "where")) with a
-            post that looks something like this:
+            to those can be found
+            <a href="#" onclick="showSection('where')">here</a>) with a post
+            that looks something like this:
           </p>
           <h4>Finding Scrims (LFS):</h4>
           <figure>
@@ -791,7 +816,7 @@
           <p><strong>Links to chats with AI: </strong></p>
           <ul>
             <li>
-              <a href="https://gemini.google.com/share/4095f0f89877"
+              <a href="https://gemini.google.com/share/a81311bbd762"
                 >Chat for boilerplate and CSS (and random questions)</a
               >
             </li>
