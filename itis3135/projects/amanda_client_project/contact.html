@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero's Journey | Contact</title>
+
+    <link rel="stylesheet" href="styles/project.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+      <h2>Get in Touch</h2>
+      <p>
+        Whether you are looking to sponsor the stream, collaborate on a video,
+        or just drop a friendly message, fill out the form below!
+      </p>
+
+      <form action="#" method="post" id="contact-form">
+        <fieldset>
+          <legend>Contact Information</legend>
+
+          <label for="userName">Name / Username:</label><br />
+          <input
+            type="text"
+            id="userName"
+            name="userName"
+            required
+          /><br /><br />
+
+          <label for="userEmail">Email Address:</label><br />
+          <input
+            type="email"
+            id="userEmail"
+            name="userEmail"
+            required
+          /><br /><br />
+
+          <label for="inquiryType">Reason for Contacting:</label><br />
+          <select id="inquiryType" name="inquiryType">
+            <option value="business">Business / Sponsorship</option>
+            <option value="collab">Stream Collaboration</option>
+            <option value="viewer">Viewer Question</option>
+            <option value="other">Other</option></select
+          ><br /><br />
+
+          <label for="userMessage">Message:</label><br />
+          <textarea
+            id="userMessage"
+            name="userMessage"
+            rows="5"
+            cols="40"
+            required
+          ></textarea
+          ><br /><br />
+
+          <input type="submit" value="Send Message" />
+          <input type="reset" value="Clear Form" />
+        </fieldset>
+      </form>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+  </body>
+</html>
