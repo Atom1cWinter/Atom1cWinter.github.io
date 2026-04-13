@@ -18,74 +18,74 @@
   */
 
   /* Dark mode "modern dark" palette */
-  /* <-- REMOVE BRACKETS BEING POINTED TO AND COMMENT OUT CURRENT ACTIVE PALETTE TO USE
-  --brand-primary: #990000; 
-  --primary-background: #050505; 
-  --base-background: #0a0a0a; 
-  --content-panel: #1a1a1a; 
-  --text-main: #f0f0f0; 
-  --text-inverted: #ffffff; 
-  --> */
+  /*
+  --brand-primary: #990000;
+  --primary-background: #050505;
+  --base-background: #0a0a0a;
+  --content-panel: #1a1a1a;
+  --text-main: #f0f0f0;
+  --text-inverted: #ffffff;
+  */
 
   /* Light mode "clean light" palette */
-  /* <-- REMOVE BRACKETS BEING POINTED TO AND COMMENT OUT CURRENT ACTIVE PALETTE TO USE
+  /*
   --brand-primary: #7a0510;
   --primary-background: #7a0510;
   --base-background: #fafafa;
   --content-panel: #ffffff;
   --text-main: #212529;
   --text-inverted: #ffffff;
-    --> */
+  */
 
   /* Warm, Monochromatic palette */
-
+  /*
   --brand-primary: #a30000;
   --primary-background: #0a0202;
   --base-background: #120505;
   --content-panel: #240d0d;
   --text-main: #eae3e3;
   --text-inverted: #ffffff;
+  */
+
+  /* Mercy Default Palette */
+  /*
+  --primary-brand: #f3e868;
+  --primary-background: #76797d;
+  --base-background: #eae0cb;
+  --content-panel: #ffffff;
+  --text-main: #2b2d42;
+  --text-inverted: #ffffff;
+  */
+
+  /* Purple Eyed Bitch Palette */
+  /*
+  --primary-brand: #9330ca;
+  --primary-background: #953120;
+  --base-background: #4f3c55;
+  --content-panel: #3a2b3f;
+  --text-main: #ffffff;
+  --text-inverted: #ffffff;
+  */
+
+  /* Cobalt Mercy Palette */
+  --primary-brand: #64ebf6;
+  --primary-background: #5b6786;
+  --base-background: #e3ddd1;
+  --content-panel: #ffffff;
+  --text-main: #675e59;
+  --text-inverted: #ffffff;
+
+  /* Fortune Mercy Palette */
+  /*
+  --primary-brand: #8dde7c;
+  --primary-background: #70231d;
+  --base-background: #311f17;
+  --content-panel: #4a2f23;
+  --text-main: #eae0cb;
+  --text-inverted: #ffffff;
+  */
 }
 
-/* Mercy Default Palette */
-/* <-- REMOVE BRACKETS BEING POINTED TO AND COMMENT OUT CURRENT ACTIVE PALETTE TO USE
-    --primary-brand: #F3E868;       
-    --primary-background: #76797D;  
-    --base-background: #EAE0CB;     
-    --content-panel: #FFFFFF;       
-    --text-main: #2B2D42;           
-    --text-inverted: #FFFFFF;       
-    --> */
-
-/* Purple Eyed Bitch Palette */
-/* <-- REMOVE BRACKETS BEING POINTED TO AND COMMENT OUT CURRENT ACTIVE PALETTE TO USE 
-    --primary-brand: #9330CA;       
-    --primary-background: #953120;  
-    --base-background: #4F3C55;     
-    --content-panel: #3A2B3F;       
-    --text-main: #FFFFFF;           
-    --text-inverted: #FFFFFF;
---> */
-
-/* Cobalt Mercy Palette */
-/* <-- REMOVE BRACKETS BEING POINTED TO AND COMMENT OUT CURRENT ACTIVE PALETTE TO USE
---primary-brand: #64ebf6; 
---primary-background: #5b6786; 
---base-background: #e3ddd1; 
---content-panel: #ffffff;  
---text-main: #675E59;           
---text-inverted: #FFFFFF;
---> */
-
-/* Fortune Mercy Palette */
-/* <-- REMOVE BRACKETS BEING POINTED TO AND COMMENT OUT CURRENT ACTIVE PALETTE TO USE
---primary-brand: #8dde7c;
---primary-background: #70231d;
---base-background: #311f17;
---content-panel: #4a2f23;
---text-main: #eae0cb;
---text-inverted: #ffffff;
--- > */
 * {
   margin: 0;
   padding: 0;
