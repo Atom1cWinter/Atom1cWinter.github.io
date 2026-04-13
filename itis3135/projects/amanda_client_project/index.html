@@ -11,6 +11,10 @@
       src="https://lint.page/kit/4d0fe3.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -18,14 +22,14 @@
 
     <main>
       <h2>Welcome to the Stream</h2>
-      <p>
+      <p class="homepage">
         Intro paragraph about Charlotte, her streams, and what viewers can
         expect.
       </p>
 
       <div class="homepage-video">
         <iframe
-          src="https://youtu.be/X4_OwCYr0Zc?si=V43aaY8tdUD7ap_A"
+          src="https://youtube.com/embed/X4_OwCYr0Zc?si=V43aaY8tdUD7ap_A"
           title="2021 | Mercy Montage (Overwatch)"
           allow="
             accelerometer;
@@ -39,14 +43,29 @@
           allowfullscreen
         ></iframe>
       </div>
-      <figure>
-        <img
-          src="images/hero-banner.jpg"
-          alt="Overwatch Gameplay"
-          style="width: 100%; max-width: 800px"
-        />
-        <figcaption>Catch the action live on Twitch!</figcaption>
-      </figure>
+      <section class="social-links">
+        <p class="homepage">
+          Put something here about Charlotte and her streams
+        </p>
+        <h3>Follow Charlotte!</h3>
+        <div class="social-icons">
+          <a
+            href="https://www.twitch.tv/charlotteow_"
+            target="_blank"
+            title="Twitch"
+            ><i class="fa-brands fa-twitch"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/@Sincitycharotte"
+            target="_blank"
+            title="YouTube"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a href="https://tiktok.com" target="_blank" title="TikTok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+        </div>
+      </section>
     </main>
 
     <div data-include="components/footer.html"></div>
