@@ -1,28 +1,106 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="styles/default.css" />
     <meta charset="UTF-8" />
-    <title>Cameron Dingle's Owlish Owl ~ ITIS 3135 | Gallery</title>
+    <title>Owlish Owl Services Survey</title>
     <script
       src="https://lint.page/kit/4d0fe3.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <div data-include="components/header.html"></div>
+    <h1 id="title">Owlish Owl Resource Survey</h1>
+    <p id="description">
+      Help us improve our digital tools and resource library
+    </p>
 
-    <main>
-      <h1>Survey</h1>
+    <form id="survey-form">
+      <div>
+        <label id="name-label" for="name">Name:</label>
+        <input id="name" type="text" placeholder="Enter your name" required />
+      </div>
 
-      <h2>
-        This is the survey page. It will eventually contain a survey for users
-        (Presumably).
-      </h2>
-    </main>
+      <div>
+        <label id="email-label" for="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
 
-    <div data-include="components/footer.html"></div>
+      <div>
+        <label id="number-label" for="number"
+          >Years of Industry Experience (optional):</label
+        >
+        <input id="number" type="number" min="0" max="99" placeholder="Years" />
+      </div>
 
-    <script src="scripts/HTMLInclude.min.js"></script>
+      <div>
+        <label for="dropdown">How did you find Owlish Owl?</label>
+        <select id="dropdown">
+          <option disabled selected value>Select an option</option>
+          <option value="portfolio">Personal Portfolio</option>
+          <option value="github">GitHub</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="referral">Professional Referral</option>
+        </select>
+      </div>
+
+      <div>
+        <p>
+          Would you be willing to pay a monthly subscription to access our
+          premium resources and information?
+        </p>
+        <label>
+          <input name="user-subscription" value="yes" type="radio" checked />
+          Yes, I value premium content
+        </label>
+        <label>
+          <input name="user-subscription" value="maybe" type="radio" /> Maybe,
+          depending on the toolset
+        </label>
+        <label>
+          <input name="user-subscription" value="no" type="radio" /> No, I
+          prefer open-source/free models
+        </label>
+      </div>
+
+      <div>
+        <p>
+          What types of products would be most helpful to carry? (Check all that
+          apply)
+        </p>
+        <label>
+          <input value="documentation-templates" type="checkbox" /> Technical
+          Documentation Templates
+        </label>
+        <label>
+          <input value="inventory-tools" type="checkbox" /> Automated Inventory
+          Management Tools
+        </label>
+        <label>
+          <input value="code-libraries" type="checkbox" /> Reusable Component
+          Libraries
+        </label>
+        <label>
+          <input value="project-guides" type="checkbox" /> Step-by-step Project
+          Implementation Guides
+        </label>
+      </div>
+
+      <div>
+        <p>
+          What sorts of questions do you have regarding our resources or
+          upcoming projects?
+        </p>
+        <textarea
+          placeholder="Enter your questions or feedback here..."
+        ></textarea>
+      </div>
+
+      <button id="submit" type="submit">Submit Feedback</button>
+    </form>
   </body>
 </html>
