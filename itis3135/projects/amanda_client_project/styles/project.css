@@ -67,13 +67,13 @@
   --text-inverted: #ffffff;
   */
 
-  /* Cobalt Mercy Palette */
+  /* Midnight Cobalt (dark default) */
   --primary-brand: #64ebf6;
-  --primary-background: #5b6786;
-  --base-background: #e3ddd1;
-  --content-panel: #ffffff;
-  --text-main: #675e59;
-  --text-inverted: #ffffff;
+  --primary-background: #131f2f;
+  --base-background: #0b111a;
+  --content-panel: #172436;
+  --text-main: #d9e8f5;
+  --text-inverted: #f4f9ff;
 
   /* Fortune Mercy Palette */
   /*
@@ -84,6 +84,53 @@
   --text-main: #eae0cb;
   --text-inverted: #ffffff;
   */
+}
+
+/* --- Light Theme Override --- */
+body.light-theme {
+  --primary-brand: #64ebf6;
+  --primary-background: #5b6786;
+  --base-background: #e3ddd1;
+  --content-panel: #ffffff;
+  --text-main: #675e59;
+  --text-inverted: #ffffff;
+}
+
+/* Dark variant options */
+body.dark-midnight-cobalt {
+  --primary-brand: #64ebf6;
+  --primary-background: #131f2f;
+  --base-background: #0b111a;
+  --content-panel: #172436;
+  --text-main: #d9e8f5;
+  --text-inverted: #f4f9ff;
+}
+
+body.dark-graphite-neon {
+  --primary-brand: #4fe0b6;
+  --primary-background: #1c2431;
+  --base-background: #111821;
+  --content-panel: #1b2634;
+  --text-main: #e2ecf5;
+  --text-inverted: #f5f8fb;
+}
+
+body.dark-ember-night {
+  --primary-brand: #ff7a59;
+  --primary-background: #2a1f24;
+  --base-background: #161014;
+  --content-panel: #23181d;
+  --text-main: #f2e6dd;
+  --text-inverted: #fff8f5;
+}
+
+body.dark-frost-slate {
+  --primary-brand: #8fd3ff;
+  --primary-background: #223447;
+  --base-background: #151f2a;
+  --content-panel: #1d2a39;
+  --text-main: #d9e7f3;
+  --text-inverted: #f5fbff;
 }
 
 * {
@@ -121,9 +168,11 @@ header h1 {
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 nav a {
@@ -141,6 +190,82 @@ nav a:hover,
 nav a:focus {
   background-color: var(--primary-brand);
   color: var(--text-inverted);
+}
+
+.theme-toggle-item {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-icon {
+  color: var(--text-inverted);
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.95;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-slider {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--text-inverted);
+  border-radius: 999px;
+  background-color: rgba(6, 11, 16, 0.5);
+  transition: background-color 0.15s steps(1, end);
+  cursor: pointer;
+}
+
+.theme-slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  background-color: var(--text-inverted);
+  transition:
+    transform 0.12s steps(1, end),
+    background-color 0.12s steps(1, end);
+}
+
+.theme-switch input:checked + .theme-slider {
+  background-color: #d8dee9;
+  border-color: #f8fbff;
+}
+
+.theme-switch input:checked + .theme-slider::before {
+  transform: translateX(24px);
+  background-color: #ffd166;
+}
+
+.theme-switch input:focus-visible + .theme-slider {
+  outline: 2px solid var(--primary-brand);
+  outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+  .theme-toggle-item {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    padding-top: 8px;
+  }
 }
 
 /* Main Content Styles */
