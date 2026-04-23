@@ -32,6 +32,56 @@
         some fun!
       </p>
 
+      <section id="stream-planner-banner" aria-labelledby="planner-heading">
+        <h3 id="planner-heading">Plan Your Next Stream Drop-In</h3>
+        <p>
+          Filter by stream type, choose your time zone, and see a live countdown
+          to the next session.
+        </p>
+
+        <div class="planner-controls">
+          <div
+            class="planner-filter"
+            role="group"
+            aria-label="Filter stream type"
+          >
+            <button class="filter-chip active" data-filter="all" type="button">
+              All
+            </button>
+            <button class="filter-chip" data-filter="competitive" type="button">
+              Competitive
+            </button>
+            <button class="filter-chip" data-filter="vod" type="button">
+              VOD Review
+            </button>
+            <button class="filter-chip" data-filter="community" type="button">
+              Community
+            </button>
+          </div>
+
+          <label class="planner-timezone" for="timezone-select">
+            Show times in:
+            <select id="timezone-select" name="timezone-select">
+              <option value="America/New_York">Eastern Time</option>
+              <option value="America/Chicago">Central Time</option>
+              <option value="America/Denver">Mountain Time</option>
+              <option value="America/Los_Angeles">Pacific Time</option>
+              <option value="UTC">UTC</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="planner-status">
+          <p id="next-stream-title">Next stream:</p>
+          <p id="next-stream-time">Loading schedule...</p>
+          <p id="countdown-timer" aria-live="polite">
+            Calculating countdown...
+          </p>
+        </div>
+
+        <ul id="upcoming-streams" aria-label="Upcoming streams"></ul>
+      </section>
+
       <div class="homepage-video">
         <iframe
           src="https://youtube.com/embed/X4_OwCYr0Zc?si=V43aaY8tdUD7ap_A"
@@ -77,7 +127,7 @@
     <div data-include="components/footer.html"></div>
 
     <script src="scripts/theme.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/stream-planner.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>
   </body>
 </html>

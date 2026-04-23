@@ -356,6 +356,116 @@ main p {
   text-align: center;
 }
 
+/* Homepage planner banner */
+#stream-planner-banner {
+  margin: 1.5rem 0 1rem;
+  border: 1px solid var(--primary-brand);
+  border-radius: 12px;
+  padding: 1.2rem;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary-background) 84%, transparent),
+    color-mix(in srgb, var(--content-panel) 92%, transparent)
+  );
+}
+
+#stream-planner-banner h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.planner-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin: 0.8rem 0 1rem;
+}
+
+.planner-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-chip {
+  border: 1px solid var(--primary-brand);
+  background-color: transparent;
+  color: var(--text-main);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-chip.active,
+.filter-chip:hover,
+.filter-chip:focus-visible {
+  background-color: var(--primary-brand);
+  color: var(--primary-background);
+}
+
+.planner-timezone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+#timezone-select {
+  border: 1px solid var(--primary-brand);
+  background: var(--content-panel);
+  color: var(--text-main);
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+}
+
+.planner-status {
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: color-mix(in srgb, var(--content-panel) 80%, black 20%);
+  margin-bottom: 0.9rem;
+}
+
+#next-stream-title {
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+#next-stream-time {
+  font-weight: 600;
+}
+
+#countdown-timer {
+  margin-bottom: 0;
+  color: var(--primary-brand);
+  font-weight: 700;
+}
+
+#upcoming-streams {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+#upcoming-streams li {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--primary-brand) 55%, transparent);
+  background-color: color-mix(in srgb, var(--content-panel) 88%, black 12%);
+}
+
+@media (max-width: 720px) {
+  .planner-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-timezone {
+    justify-content: flex-start;
+  }
+}
+
 /* Gallery Styles */
 #image-gallery {
   display: grid;
