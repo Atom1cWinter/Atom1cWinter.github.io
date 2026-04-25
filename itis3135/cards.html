@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Playing Cards</title>
-    <link rel="stylesheet" href="styles/cards.css" />
+    <link rel="stylesheet" href="styles/default.css" />
     <script
       src="https://lint.page/kit/4d0fe3.js"
       crossorigin="anonymous"
@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <div data-include="components/header.html"></div>
     <main id="playing-cards">
       <div class="card">
         <div class="left">A<br />♠</div>
@@ -40,5 +41,7 @@
         <div class="right">A<br />♦</div>
       </div>
     </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
   </body>
 </html>
