@@ -16,7 +16,8 @@
     }
 
     const data = await window.introForm.collectFormData();
-    const jsonObject = {
+    // prettier-ignore
+    const introData = {
       firstName: data.firstName,
       preferredName: data.nickname,
       middleInitial: data.middleName,
@@ -41,40 +42,21 @@
       acknowledgementStatement: data.ackStatement,
       acknowledgementDate: data.ackDate,
       courses: data.courses,
-      links: data.links,
+      links: data.links
     };
 
-    const jsonText = JSON.stringify(
-      {
-        first_name: jsonObject.firstName,
-        preferred_name: jsonObject.preferredName,
-        middle_initial: jsonObject.middleInitial,
-        last_name: jsonObject.lastName,
-        divider: jsonObject.divider,
-        mascot_adjective: jsonObject.mascotAdjective,
-        mascot_animal: jsonObject.mascotAnimal,
-        image: jsonObject.image,
-        image_caption: jsonObject.imageCaption,
-        personal_statement: jsonObject.personalStatement,
-        personal_background: jsonObject.personalBackground,
-        professional_background: jsonObject.professionalBackground,
-        academic_background: jsonObject.academicBackground,
-        subject_background: jsonObject.subjectBackground,
-        primary_computer: jsonObject.primaryComputer,
-        course_reason: jsonObject.courseReason,
-        career_goals: jsonObject.careerGoals,
-        quote: jsonObject.quote,
-        quote_author: jsonObject.quoteAuthor,
-        funny_thing: jsonObject.funnyThing,
-        something_to_share: jsonObject.somethingToShare,
-        acknowledgement_statement: jsonObject.acknowledgementStatement,
-        acknowledgement_date: jsonObject.acknowledgementDate,
-        courses: jsonObject.courses,
-        links: jsonObject.links,
-      },
-      null,
-      2,
-    );
+    function toSnakeCase(value) {
+      return value.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+    }
+
+    // prettier-ignore
+    function toSnakeCaseObject(source) {
+      return Object.fromEntries(
+        Object.entries(source).map(([key, value]) => [toSnakeCase(key), value])
+      );
+    }
+
+    const jsonText = JSON.stringify(toSnakeCaseObject(introData), null, 2);
 
     window.introForm.renderCode("Introduction JSON", jsonText, "json");
   });
