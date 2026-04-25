@@ -16,6 +16,18 @@ main {
   margin: 20px 0 30px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 header {
   background-color: #fae8ff; /* Soft purple */
   padding: 25px;
@@ -115,6 +127,156 @@ figcaption {
 
 #survey-form button[type="submit"]:hover {
   background-color: #4c1d95;
+}
+
+/* Introduction form page */
+#intro-form-view #form {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(112, 26, 117, 0.12);
+  display: grid;
+  gap: 14px;
+  font-size: 0.95rem;
+  width: min(100%, 760px);
+  margin: 0 auto;
+}
+
+#intro-form-view,
+#intro-form-view * {
+  box-sizing: border-box;
+}
+
+#intro-form-view fieldset {
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+#intro-form-view legend {
+  font-family: "Oswald", sans-serif;
+  color: #701a75;
+  padding: 0 8px;
+}
+
+#intro-form-view label {
+  font-weight: 600;
+}
+
+#intro-form-view input,
+#intro-form-view textarea,
+#intro-form-view select,
+#intro-form-view button {
+  font: inherit;
+}
+
+#intro-form-view input[type="text"],
+#intro-form-view input[type="url"],
+#intro-form-view input[type="date"],
+#intro-form-view textarea,
+#intro-form-view select {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #d8b4fe;
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: rgba(76, 29, 149, 0.72);
+  background-color: #fff;
+}
+
+#intro-form-view input::placeholder,
+#intro-form-view textarea::placeholder {
+  color: rgba(76, 29, 149, 0.45);
+}
+
+#intro-form-view select {
+  color: rgba(76, 29, 149, 0.72);
+}
+
+#intro-form-view input[type="file"] {
+  width: 100%;
+  max-width: 100%;
+  padding: 8px 0;
+}
+
+#intro-form-view textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#picturePreview {
+  display: block;
+  width: min(260px, 100%);
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+#course-list {
+  display: grid;
+  gap: 12px;
+}
+
+.course-row {
+  border: 1px solid #f3d2f6;
+  border-radius: 8px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  align-items: end;
+}
+
+.course-row .delete-course {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+#intro-form-view #add-course {
+  justify-self: start;
+}
+
+#intro-form-view #form > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#intro-form-view button {
+  background-color: #701a75;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#intro-form-view button:hover {
+  background-color: #4c1d95;
+}
+
+#intro-output-view pre {
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+#intro-output-view {
+  width: min(100%, 760px);
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .course-row {
+    grid-template-columns: 1fr;
+  }
+
+  #intro-form-view #form,
+  #intro-output-view {
+    width: 100%;
+  }
 }
 
 /* Cards page */
