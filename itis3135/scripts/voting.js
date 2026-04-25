@@ -1,42 +1,89 @@
-let poll = new Map();
+// prettier-ignore
+const poll = new Map([
+  ["Great Horned Owl", 0],
+  ["Snowy Owl", 0],
+  ["Barn Owl", 0]
+]);
 
-function addOption(option) {
-  if (!option || option.trim() === "") {
-    return "Option cannot be empty.";
-  }
-  if (poll.has(option)) {
-    return `Option "${option}" already exists.`;
-  }
-  poll.set(option, new Set());
-  return `Option "${option}" added to the poll.`;
+const pollOptions = document.getElementById("poll-options");
+const pollResults = document.getElementById("poll-results");
+const addOptionForm = document.getElementById("add-option-form");
+const newOptionInput = document.getElementById("new-option-input");
+const voteMessage = document.getElementById("vote-message");
+
+function setMessage(message) {
+  voteMessage.textContent = message;
 }
 
-function vote(option, voterId) {
+function addOption(option) {
+  const trimmedOption = option.trim();
+  if (!trimmedOption) {
+    return "Option cannot be empty.";
+  }
+  if (poll.has(trimmedOption)) {
+    return `Option "${trimmedOption}" already exists.`;
+  }
+  poll.set(trimmedOption, 0);
+  return `Option "${trimmedOption}" added to the poll.`;
+}
+
+function vote(option) {
   if (!poll.has(option)) {
     return `Option "${option}" does not exist.`;
   }
 
-  let voters = poll.get(option);
-  if (voters.has(voterId)) {
-    return `Voter ${voterId} has already voted for "${option}".`;
-  }
-
-  voters.add(voterId);
-  return `Voter ${voterId} voted for "${option}".`;
+  poll.set(option, poll.get(option) + 1);
+  return `Vote recorded for "${option}".`;
 }
 
-function displayResults() {
-  let results = "Poll Results:";
-  poll.forEach((voters, option) => {
-    results += `\n${option}: ${voters.size} votes`;
+function getTotalVotes() {
+  return Array.from(poll.values()).reduce((sum, count) => sum + count, 0);
+}
+
+function renderPoll() {
+  const totalVotes = getTotalVotes();
+
+  pollOptions.innerHTML = "";
+  pollResults.innerHTML = "";
+
+  poll.forEach((count, option) => {
+    const optionButton = document.createElement("button");
+    optionButton.type = "button";
+    optionButton.className = "poll-option";
+    optionButton.textContent = option;
+    optionButton.addEventListener("click", () => {
+      setMessage(vote(option));
+      renderPoll();
+    });
+    pollOptions.appendChild(optionButton);
+
+    const resultRow = document.createElement("article");
+    resultRow.className = "result-row";
+
+    const percent =
+      totalVotes === 0 ? 0 : Math.round((count / totalVotes) * 100);
+
+    resultRow.innerHTML = `
+      <div class="result-copy">
+        <h3>${option}</h3>
+        <p>${count} vote${count === 1 ? "" : "s"} (${percent}%)</p>
+      </div>
+      <div class="result-bar" aria-hidden="true">
+        <span style="width: ${percent}%"></span>
+      </div>
+    `;
+    pollResults.appendChild(resultRow);
   });
-  return results;
 }
 
-addOption("Great Horned Owl");
-addOption("Snowy Owl");
-addOption("Barn Owl");
+addOptionForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const result = addOption(newOptionInput.value);
+  setMessage(result);
+  if (result.endsWith("added to the poll.")) {
+    newOptionInput.value = "";
+    renderPoll();
+  }
+});
 
-vote("Great Horned Owl", "user1");
-vote("Great Horned Owl", "user2");
-vote("Snowy Owl", "user3");
+renderPoll();

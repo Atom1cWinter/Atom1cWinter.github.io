@@ -13,13 +13,84 @@
 
   <body>
     <div data-include="components/header.html"></div>
-    <main>
-      <h1>Banking Management System</h1>
-      <p>
-        This is a placeholder page while I work on the actual implementation.
-      </p>
+    <main class="page-shell widget-page bank-page">
+      <section class="widget-card bank-hero">
+        <p class="eyebrow">Account simulator</p>
+        <h1>Banking Management System</h1>
+        <p class="page-summary">
+          Make deposits, withdrawals, and track the current balance in one
+          simple demo.
+        </p>
+      </section>
+
+      <div class="bank-layout">
+        <section class="widget-card bank-summary">
+          <h2>Account Snapshot</h2>
+          <div class="stat-grid">
+            <article>
+              <h3 class="visually-hidden">Balance</h3>
+              <span class="metric-label">Balance</span>
+              <strong id="balance-value">$0</strong>
+            </article>
+            <article>
+              <h3 class="visually-hidden">Deposits</h3>
+              <span class="metric-label">Deposits</span>
+              <strong id="deposit-count">0</strong>
+            </article>
+            <article>
+              <h3 class="visually-hidden">Withdrawals</h3>
+              <span class="metric-label">Withdrawals</span>
+              <strong id="withdraw-count">0</strong>
+            </article>
+            <article>
+              <h3 class="visually-hidden">Transactions</h3>
+              <span class="metric-label">Transactions</span>
+              <strong id="transaction-count">0</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="widget-card bank-controls">
+          <h2>Account Actions</h2>
+          <div class="controls bank-form">
+            <label class="field" for="amount-input">
+              <span>Amount</span>
+              <input
+                id="amount-input"
+                type="number"
+                min="1"
+                step="1"
+                placeholder="Enter an amount"
+              />
+            </label>
+            <div class="action-row">
+              <button id="deposit-btn" class="button-primary" type="button">
+                Deposit
+              </button>
+              <button id="withdraw-btn" class="button-secondary" type="button">
+                Withdraw
+              </button>
+              <button id="balance-btn" class="button-secondary" type="button">
+                Check Balance
+              </button>
+              <button id="reset-btn" class="button-ghost" type="button">
+                Reset
+              </button>
+            </div>
+          </div>
+          <p id="bank-message" class="status-message">
+            Ready to process an account action.
+          </p>
+        </section>
+
+        <section class="widget-card bank-history">
+          <h2>Transaction Log</h2>
+          <ul id="transaction-list" class="transaction-list"></ul>
+        </section>
+      </div>
     </main>
     <div data-include="components/footer.html"></div>
+    <script src="scripts/bank.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>
   </body>
 </html>

@@ -13,24 +13,39 @@
 
   <body>
     <div data-include="components/header.html"></div>
-    <h1>Markdown to HTML Converter</h1>
-    <div id="container">
-      <div class="container">
-        <h2>Markdown Input:</h2>
-        <textarea
-          id="markdown-input"
-          placeholder="Enter your markdown here..."
-        ></textarea>
+    <main class="page-shell widget-page converter-page">
+      <section class="widget-card converter-intro">
+        <p class="eyebrow">Text utility</p>
+        <h1>Markdown to HTML Converter</h1>
+        <p class="page-summary">
+          Write a quick markdown draft and see both the raw HTML and the
+          rendered preview.
+        </p>
+      </section>
+
+      <div id="container" class="converter-layout">
+        <section class="widget-card container">
+          <h2>Markdown Input</h2>
+          <textarea
+            id="markdown-input"
+            class="converter-input"
+            placeholder="Enter your markdown here..."
+          ></textarea>
+        </section>
+        <section class="widget-card container">
+          <h2>Raw HTML Output</h2>
+          <div
+            id="html-output"
+            class="converter-output"
+            aria-live="polite"
+          ></div>
+        </section>
+        <section class="widget-card container">
+          <h2>HTML Preview</h2>
+          <div id="preview" class="converter-preview" aria-live="polite"></div>
+        </section>
       </div>
-      <div class="container">
-        <h2>Raw HTML Output:</h2>
-        <div id="html-output"></div>
-      </div>
-      <div class="container">
-        <h2>HTML Preview:</h2>
-        <div id="preview"></div>
-      </div>
-    </div>
+    </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/converter.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>

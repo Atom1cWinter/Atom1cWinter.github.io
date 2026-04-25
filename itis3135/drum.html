@@ -11,85 +11,145 @@
   </head>
   <body>
     <div data-include="components/header.html"></div>
-    <div id="drum-machine">
-      <h1>Owlish Owl Soundboard</h1>
-      <p id="display">Press a key or click a pad!</p>
+    <main class="page-shell widget-page drum-page">
+      <section id="drum-machine" class="widget-card drum-machine">
+        <p class="eyebrow">Interactive soundboard</p>
+        <h1>Owlish Owl Soundboard</h1>
+        <p class="page-summary">
+          Use the keyboard or click a pad to trigger a sample.
+        </p>
+        <p id="display" class="drum-display">Press a key or click a pad!</p>
 
-      <div id="pad-bank">
-        <button class="drum-pad" id="Heater-1">
-          Q
-          <audio
-            class="clip"
-            id="Q"
-            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-1.mp3"
-          ></audio>
-        </button>
-        <button class="drum-pad" id="Heater-2">
-          W
-          <audio
-            class="clip"
-            id="W"
-            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-2.mp3"
-          ></audio>
-        </button>
-        <button class="drum-pad" id="Heater-3">
-          E
-          <audio
-            class="clip"
-            id="E"
-            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-3.mp3"
-          ></audio>
-        </button>
-        <button class="drum-pad" id="Heater-4">
-          A
-          <audio
-            class="clip"
-            id="A"
-            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-4_1.mp3"
-          ></audio>
-        </button>
-        <button class="drum-pad" id="Clap">
-          S
-          <audio
-            class="clip"
-            id="S"
-            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-6.mp3"
-          ></audio>
-        </button>
-        <button class="drum-pad" id="Open-HH">
-          D
-          <audio
-            class="clip"
-            id="D"
-            src="https://cdn.freecodecamp.org/curriculum/drum/Dsc_Oh.mp3"
-          ></audio>
-        </button>
-        <button class="drum-pad" id="Kick-n-Hat">
-          Z
-          <audio
-            class="clip"
-            id="Z"
-            src="https://cdn.freecodecamp.org/curriculum/drum/Kick_n_Hat.mp3"
-          ></audio>
-        </button>
-        <button class="drum-pad" id="Kick">
-          X
-          <audio
-            class="clip"
-            id="X"
-            src="https://cdn.freecodecamp.org/curriculum/drum/RP4_KICK_1.mp3"
-          ></audio>
-        </button>
-        <button class="drum-pad" id="Closed-HH">
-          C
-          <audio
-            class="clip"
-            id="C"
-            src="https://cdn.freecodecamp.org/curriculum/drum/Cev_H2.mp3"
-          ></audio>
-        </button>
-      </div>
-    </div>
+        <div id="pad-bank" class="drum-grid">
+          <button
+            class="drum-pad"
+            id="Heater-1"
+            type="button"
+            data-key="Q"
+            data-label="Nocturnal Hoot"
+          >
+            Q
+            <audio
+              class="clip"
+              id="Q"
+              src="https://cdn.freecodecamp.org/curriculum/drum/Heater-1.mp3"
+            ></audio>
+          </button>
+          <button
+            class="drum-pad"
+            id="Heater-2"
+            type="button"
+            data-key="W"
+            data-label="Feather Snap"
+          >
+            W
+            <audio
+              class="clip"
+              id="W"
+              src="https://cdn.freecodecamp.org/curriculum/drum/Heater-2.mp3"
+            ></audio>
+          </button>
+          <button
+            class="drum-pad"
+            id="Heater-3"
+            type="button"
+            data-key="E"
+            data-label="Barn Owl Screech"
+          >
+            E
+            <audio
+              class="clip"
+              id="E"
+              src="https://cdn.freecodecamp.org/curriculum/drum/Heater-3.mp3"
+            ></audio>
+          </button>
+          <button
+            class="drum-pad"
+            id="Heater-4"
+            type="button"
+            data-key="A"
+            data-label="Forest Flutter"
+          >
+            A
+            <audio
+              class="clip"
+              id="A"
+              src="https://cdn.freecodecamp.org/curriculum/drum/Heater-4_1.mp3"
+            ></audio>
+          </button>
+          <button
+            class="drum-pad"
+            id="Clap"
+            type="button"
+            data-key="S"
+            data-label="Talon Tap"
+          >
+            S
+            <audio
+              class="clip"
+              id="S"
+              src="https://cdn.freecodecamp.org/curriculum/drum/Heater-6.mp3"
+            ></audio>
+          </button>
+          <button
+            class="drum-pad"
+            id="Open-HH"
+            type="button"
+            data-key="D"
+            data-label="Owl Wing Whoosh"
+          >
+            D
+            <audio
+              class="clip"
+              id="D"
+              src="https://cdn.freecodecamp.org/curriculum/drum/Dsc_Oh.mp3"
+            ></audio>
+          </button>
+          <button
+            class="drum-pad"
+            id="Kick-n-Hat"
+            type="button"
+            data-key="Z"
+            data-label="Midnight Chirp"
+          >
+            Z
+            <audio
+              class="clip"
+              id="Z"
+              src="https://cdn.freecodecamp.org/curriculum/drum/Kick_n_Hat.mp3"
+            ></audio>
+          </button>
+          <button
+            class="drum-pad"
+            id="Kick"
+            type="button"
+            data-key="X"
+            data-label="Wise Echo"
+          >
+            X
+            <audio
+              class="clip"
+              id="X"
+              src="https://cdn.freecodecamp.org/curriculum/drum/RP4_KICK_1.mp3"
+            ></audio>
+          </button>
+          <button
+            class="drum-pad"
+            id="Closed-HH"
+            type="button"
+            data-key="C"
+            data-label="Parliament Beat"
+          >
+            C
+            <audio
+              class="clip"
+              id="C"
+              src="https://cdn.freecodecamp.org/curriculum/drum/Cev_H2.mp3"
+            ></audio>
+          </button>
+        </div>
+      </section>
+    </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/drum.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>

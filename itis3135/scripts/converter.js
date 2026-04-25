@@ -29,3 +29,5 @@ markdownInput.addEventListener("input", () => {
   htmlOutput.textContent = htmlContent;
   preview.innerHTML = htmlContent;
 });
+
+convertMarkdown();

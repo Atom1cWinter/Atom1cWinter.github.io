@@ -1,10 +1,14 @@
 const citySelect = document.getElementById("city-select");
 const getWeatherBtn = document.getElementById("get-weather-btn");
+const weatherStatus = document.getElementById("weather-status");
+const weatherIcon = document.getElementById("weather-icon");
+const fallbackIcon = "about:blank";
 
 async function getWeather(city) {
   try {
+    // prettier-ignore
     const response = await fetch(
-      `https://weather-proxy.freecodecamp.rocks/api/city/${city}`,
+      `https://weather-proxy.freecodecamp.rocks/api/city/${city}`
     );
     const data = await response.json();
     return data;
@@ -14,29 +18,54 @@ async function getWeather(city) {
 }
 
 async function showWeather(city) {
+  weatherStatus.textContent = "Loading current weather...";
   const data = await getWeather(city);
 
   if (!data || data.error) {
-    alert("Something went wrong, please try again later.");
+    weatherStatus.textContent = "Unable to load the forecast right now.";
     return;
   }
 
-  document.getElementById("weather-icon").src = data.weather[0]?.icon || "";
+  const weatherInfo =
+    data.weather && data.weather.length ? data.weather[0] : {};
+  const mainInfo = data.main || {};
+  const windInfo = data.wind || {};
+
+  weatherIcon.src = weatherInfo.icon || fallbackIcon;
+  weatherIcon.alt = weatherInfo.main
+    ? `${weatherInfo.main} weather icon`
+    : "Weather icon";
   document.getElementById("main-temperature").innerText =
-    data.main?.temp ?? "N/A";
+    mainInfo.temp !== undefined && mainInfo.temp !== null
+      ? mainInfo.temp
+      : "N/A";
   document.getElementById("feels-like").innerText =
-    data.main?.feels_like ?? "N/A";
-  document.getElementById("humidity").innerText = data.main?.humidity ?? "N/A";
-  document.getElementById("wind").innerText = data.wind?.speed ?? "N/A";
-  document.getElementById("wind-gust").innerText = data.wind?.gust ?? "N/A";
-  document.getElementById("weather-main").innerText =
-    data.weather[0]?.main ?? "N/A";
-  document.getElementById("location").innerText = data.name ?? "N/A";
+    mainInfo.feels_like !== undefined && mainInfo.feels_like !== null
+      ? mainInfo.feels_like
+      : "N/A";
+  document.getElementById("humidity").innerText =
+    mainInfo.humidity !== undefined && mainInfo.humidity !== null
+      ? mainInfo.humidity
+      : "N/A";
+  document.getElementById("wind").innerText =
+    windInfo.speed !== undefined && windInfo.speed !== null
+      ? windInfo.speed
+      : "N/A";
+  document.getElementById("wind-gust").innerText =
+    windInfo.gust !== undefined && windInfo.gust !== null
+      ? windInfo.gust
+      : "N/A";
+  document.getElementById("weather-main").innerText = weatherInfo.main || "N/A";
+  const locationName = data.name || "N/A";
+  document.getElementById("location").innerText = locationName;
+  weatherStatus.textContent = `Updated for ${data.name || city}.`;
 }
 
 getWeatherBtn.addEventListener("click", () => {
   const selectedCity = citySelect.value;
   if (selectedCity) {
     showWeather(selectedCity);
+  } else {
+    weatherStatus.textContent = "Choose a city before requesting weather.";
   }
 });
