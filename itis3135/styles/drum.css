@@ -1,0 +1,51 @@
+body {
+  background-color: #2c3e50;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#drum-machine {
+  background-color: #34495e;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 400px;
+}
+
+#display {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  min-height: 20px;
+  border-radius: 5px;
+}
+
+#pad-bank {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.drum-pad {
+  background-color: #bdc3c7;
+  border: none;
+  padding: 25px 0;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.1s;
+}
+
+.drum-pad:active {
+  background-color: #f1c40f; /* Glow color when owl is "wise" */
+  transform: scale(0.95);
+}
