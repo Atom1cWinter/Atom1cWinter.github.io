@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown to HTML Converter</title>
+    <link rel="stylesheet" href="styles/default.css" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div data-include="components/header.html"></div>
+    <main class="page-shell widget-page converter-page">
+      <section class="widget-card converter-intro">
+        <p class="eyebrow">Text utility</p>
+        <h1>Markdown to HTML Converter</h1>
+        <p class="page-summary">
+          Write a quick markdown draft and see both the raw HTML and the
+          rendered preview.
+        </p>
+      </section>
+
+      <div id="container" class="converter-layout">
+        <section class="widget-card container">
+          <h2>Markdown Input</h2>
+          <textarea
+            id="markdown-input"
+            class="converter-input"
+            placeholder="Enter your markdown here..."
+          ></textarea>
+        </section>
+        <section class="widget-card container">
+          <h2>Raw HTML Output</h2>
+          <div
+            id="html-output"
+            class="converter-output"
+            aria-live="polite"
+          ></div>
+        </section>
+        <section class="widget-card container">
+          <h2>HTML Preview</h2>
+          <div id="preview" class="converter-preview" aria-live="polite"></div>
+        </section>
+      </div>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/converter.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+  </body>
+</html>

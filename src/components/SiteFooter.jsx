@@ -1,0 +1,45 @@
+function SiteFooter() {
+  return (
+    <footer>
+      <nav>
+        <a href="https://github.com/Atom1cWinter/">GitHub</a> &nbsp; | &nbsp;
+        <a href="https://webpages.charlotte.edu/cdingle1/">CLT Website</a>
+        &nbsp; | &nbsp;
+        <a href="https://atom1cwinter.github.io/">GitHub.io</a> &nbsp; | &nbsp;
+        <a href="https://www.freecodecamp.org/fcc-4763056d-8ad1-44cf-930c-351c8f2d72e5/">
+          freeCodeCamp
+        </a>
+        &nbsp; | &nbsp;
+        <a href="https://www.linkedin.com/in/cameron-dingle-266036296/">
+          LinkedIn
+        </a>
+        &nbsp; | &nbsp;
+        <a href="https://your-vercel-url.vercel.app">ITIS3135@Vercel</a>
+      </nav>
+      <br />
+      <p>Page built by the Owlish Owl Design Firm</p>
+      <p>
+        Certified in{" "}
+        <a
+          href="https://www.freecodecamp.org/certification/cdingle1/responsive-web-design-v9"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Responsive Web Design
+        </a>
+      </p>
+      <p>
+        Certified in{" "}
+        <a
+          href="https://www.freecodecamp.org/certification/cdingle1/javascript-v9"
+          target="_blank"
+          rel="noreferrer"
+        >
+          JavaScript Algorithms and Data Structures
+        </a>
+      </p>
+    </footer>
+  );
+}
+
+export default SiteFooter;

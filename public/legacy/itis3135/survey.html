@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Owlish Owl Services Survey</title>
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/default.css" />
+  </head>
+  <body>
+    <div data-include="components/header.html"></div>
+    <h1 id="title">Owlish Owl Resource Survey</h1>
+    <p id="description">
+      Help us improve our digital tools and resource library
+    </p>
+
+    <form id="survey-form">
+      <div>
+        <label id="name-label" for="name">Name:</label>
+        <input id="name" type="text" placeholder="Enter your name" required />
+      </div>
+
+      <div>
+        <label id="email-label" for="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+
+      <div>
+        <label id="number-label" for="number"
+          >Years of Industry Experience (optional):</label
+        >
+        <input id="number" type="number" min="0" max="99" placeholder="Years" />
+      </div>
+
+      <div>
+        <label for="dropdown">How did you find Owlish Owl?</label>
+        <select id="dropdown">
+          <option disabled selected value>Select an option</option>
+          <option value="portfolio">Personal Portfolio</option>
+          <option value="social media">Social Media</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="youtube">YouTube</option>
+        </select>
+      </div>
+
+      <div>
+        <p>
+          Would you be willing to pay a monthly subscription to access high
+          quality information on Owls, where to learn more about them, and
+          support us??
+        </p>
+        <label>
+          <input name="user-subscription" value="yes" type="radio" checked />
+          Yes!
+        </label>
+        <label>
+          <input name="user-subscription" value="maybe" type="radio" /> Maybe,
+          depending on price and what's offered
+        </label>
+        <label>
+          <input name="user-subscription" value="no" type="radio" /> No thank
+          you
+        </label>
+      </div>
+
+      <div>
+        <p>
+          What types of products would be most helpful to carry? (Check all that
+          apply)
+        </p>
+        <label>
+          <input value="books" type="checkbox" /> Non-Fiction Books on Owls and
+          Nocturnal Birds
+        </label>
+        <label>
+          <input value="inventory-tools" type="checkbox" /> Bird and Owl
+          watching gear and tools
+        </label>
+        <label>
+          <input value="articles" type="checkbox" /> Owl observation and
+          identification articles and guides
+        </label>
+        <label>
+          <input value="guides" type="checkbox" /> Owl watching guides
+        </label>
+      </div>
+
+      <div>
+        <p>
+          Any questions, comments, or suggestions? We would love to hear your
+          feedback!
+        </p>
+        <textarea
+          placeholder="Enter your questions or feedback here..."
+        ></textarea>
+      </div>
+
+      <button id="submit" type="submit">Submit Feedback</button>
+    </form>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+  </body>
+</html>

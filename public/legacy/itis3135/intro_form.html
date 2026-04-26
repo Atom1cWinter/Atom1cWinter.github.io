@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction Form</title>
+    <link rel="stylesheet" href="styles/default.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css"
+    />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  </head>
+  <body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+      <h2 id="intro-form-heading">Introduction Form</h2>
+      <h3>Please submit the form below.</h3>
+
+      <section id="intro-form-view">
+        <h3 class="sr-only">Introduction form fields</h3>
+        <form id="form">
+          <fieldset>
+            <legend>Name</legend>
+            <label for="firstName">First Name *</label>
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              required
+              placeholder="Enter your first name"
+              value="Cameron"
+            />
+
+            <label for="middleName">Middle Name or Initial</label>
+            <input
+              id="middleName"
+              name="middleName"
+              type="text"
+              placeholder="Middle name or initial (optional)"
+              value="T."
+            />
+
+            <label for="nickname">Nickname or Preferred Name</label>
+            <input
+              id="nickname"
+              name="nickname"
+              type="text"
+              placeholder="Nickname or preferred name (optional)"
+              value="Cameron"
+            />
+
+            <label for="lastName">Last Name *</label>
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              required
+              placeholder="Enter your last name"
+              value="Dingle"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Mascot Line</legend>
+            <label for="mascotAdjective">Mascot Adjective *</label>
+            <input
+              id="mascotAdjective"
+              name="mascotAdjective"
+              type="text"
+              required
+              placeholder="Example: Curious"
+              value="Owlish"
+            />
+
+            <label for="mascotAnimal">Mascot Animal *</label>
+            <input
+              id="mascotAnimal"
+              name="mascotAnimal"
+              type="text"
+              required
+              placeholder="Example: Owl"
+              value="Owl"
+            />
+
+            <label for="divider">Divider Symbol *</label>
+            <input
+              id="divider"
+              name="divider"
+              type="text"
+              required
+              placeholder="~, |, *, etc"
+              value="~"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Acknowledgment</legend>
+            <label for="ackStatement">Acknowledgment Statement *</label>
+            <textarea
+              id="ackStatement"
+              name="ackStatement"
+              required
+              placeholder="I understand this introduction form is my own work..."
+            >
+I understand that what I put here is publicly available on the web and I won't put anything here I don't want the public to see.</textarea
+            >
+
+            <label for="ackDate">Acknowledgment Date *</label>
+            <input
+              id="ackDate"
+              name="ackDate"
+              type="text"
+              required
+              pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+              placeholder="YYYY-MM-DD"
+              value="2026-03-13"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Image</legend>
+            <label for="pictureUrl">Default Picture URL *</label>
+            <input
+              id="pictureUrl"
+              name="pictureUrl"
+              type="url"
+              required
+              placeholder="images/your-photo.jpg"
+              value="http://example.com/placeholder-image.jpg"
+            />
+
+            <img
+              id="picturePreview"
+              src="../Dog1.jpg"
+              alt="A picture of my dogs. From the left, Barney, Beaker, Betty, and Baylee (Yes, it's confusing)"
+            />
+
+            <label for="pictureFile">Upload Different Picture</label>
+            <input
+              id="pictureFile"
+              name="pictureFile"
+              type="file"
+              accept="image/*"
+            />
+
+            <label for="pictureCaption">Picture Caption *</label>
+            <input
+              id="pictureCaption"
+              name="pictureCaption"
+              type="text"
+              required
+              placeholder="Caption describing your photo"
+              value="A photo of my dogs. From the left, Barney, Beaker, Betty, and Baylee (Yes, it's confusing)"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Personal Statement</legend>
+            <label for="personalStatement">Personal Statement *</label>
+            <textarea
+              id="personalStatement"
+              name="personalStatement"
+              required
+              placeholder="Short personal statement"
+            >
+I am a senior at UNC Charlotte studying Computer Science without a real focus on a specific area. I enjoy learning more about CS and am excited to broaden my experiences in the field and create projects I can be proud of.</textarea
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>Main Bullets</legend>
+            <label for="personalBackground">Personal Background *</label>
+            <textarea
+              id="personalBackground"
+              name="personalBackground"
+              required
+              placeholder="Personal background"
+            >
+I'm currently 25 years old and really enjoy learning about random topics and working on PCs. If you have any fun facts, I'd love to hear them! I've also got 4 dogs and enjoy gaming in my free time.</textarea
+            >
+
+            <label for="professionalBackground"
+              >Professional Background *</label
+            >
+            <textarea
+              id="professionalBackground"
+              name="professionalBackground"
+              required
+              placeholder="Professional background"
+            >
+I've worked in a few different fields over the years ranging from doing feasibility studies into the viability of different GMO products in late high school to spending a few months as a professional OW player to working in retail as I work towards my CS degree. Currently, I'm a manager at Target while I wrap up my degree.</textarea
+            >
+
+            <label for="academicBackground">Academic Background *</label>
+            <textarea
+              id="academicBackground"
+              name="academicBackground"
+              required
+              placeholder="Academic background"
+            >
+I am currently a senior at UNC Charlotte studying towards a CS degree in software, systems, and networks. Prior to that, I spent 4 years at Appstate working on a double major in chemistry and biochemistry, though I didn't finish that degree before changing my field of study and transferring to UNCC. I'm also a graduate of Sun Valley High School in Monroe, NC and I have a CompTIA A+ certification and am working on a Network+ certifcation as well.</textarea
+            >
+
+            <label for="subjectBackground">Background in Subject *</label>
+            <textarea
+              id="subjectBackground"
+              name="subjectBackground"
+              required
+              placeholder="Background in this subject"
+            >
+I actually don't have much of a background in front end web development. My only experience with it is a bit of development for a webserver project I've done for a class last semester but I wasn't the one responsible for our front end implementation so I haven't had much experience with it.</textarea
+            >
+
+            <label for="primaryComputer">Primary Computer Platform *</label>
+            <textarea
+              id="primaryComputer"
+              name="primaryComputer"
+              required
+              placeholder="Describe your primary computer"
+            >
+My primary work computer is a custom built PC I use for gaming, personal projects, as a server, and for schoolwork. It has a 4080 super, a 7800x3d, 96gb of ram, and about 5tb of storage. I also have an old 13-inch laptop I bring to and from campus.</textarea
+            >
+
+            <label for="courseReason">Why Are You Taking This Course? *</label>
+            <textarea
+              id="courseReason"
+              name="courseReason"
+              required
+              placeholder="Reason for taking this course"
+            >
+I thought this class would be interesting and I don't really have any experience in front end development so I thought it could help me a bit with learning about that.</textarea
+            >
+
+            <label for="careerGoals">Career/Academic Goals *</label>
+            <textarea
+              id="careerGoals"
+              name="careerGoals"
+              required
+              placeholder="Your goals"
+            >
+I want to broaden my computer science experience, strengthen my project portfolio, and build skills I can apply professionally after graduation.</textarea
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>Courses</legend>
+            <p>Add each course with department, number, name, and reason.</p>
+            <div id="course-list">
+              <div class="course-row">
+                <label>
+                  Department
+                  <input
+                    type="text"
+                    class="course-department"
+                    required
+                    placeholder="ITIS"
+                    value="ITIS"
+                  />
+                </label>
+                <label>
+                  Number
+                  <input
+                    type="text"
+                    class="course-number"
+                    required
+                    placeholder="3135"
+                    value="3135"
+                  />
+                </label>
+                <label>
+                  Name
+                  <input
+                    type="text"
+                    class="course-name"
+                    required
+                    placeholder="Web-Based Application Design"
+                    value="Web-Based Application Design and Development"
+                  />
+                </label>
+                <label>
+                  Reason
+                  <input
+                    type="text"
+                    class="course-reason"
+                    required
+                    placeholder="Why you are taking this course"
+                    value="I thought this class would be interesting and I don't really have any experience in front end development so I thought it could help me a bit with learning about that."
+                  />
+                </label>
+              </div>
+              <div class="course-row">
+                <label>
+                  Department
+                  <input
+                    type="text"
+                    class="course-department"
+                    required
+                    placeholder="ITCS"
+                    value="ITCS"
+                  />
+                </label>
+                <label>
+                  Number
+                  <input
+                    type="text"
+                    class="course-number"
+                    required
+                    placeholder="4141"
+                    value="4141"
+                  />
+                </label>
+                <label>
+                  Name
+                  <input
+                    type="text"
+                    class="course-name"
+                    required
+                    placeholder="Computer Systems and Architecture"
+                    value="Computer Systems and Architecture"
+                  />
+                </label>
+                <label>
+                  Reason
+                  <input
+                    type="text"
+                    class="course-reason"
+                    required
+                    placeholder="Why you are taking this course"
+                    value="This is one of the final course requirements I need for my degree and, while I'm familiar with most of it's content, it's always good to make sure I have a proper understanding and maybe I learn more."
+                  />
+                </label>
+              </div>
+              <div class="course-row">
+                <label>
+                  Department
+                  <input
+                    type="text"
+                    class="course-department"
+                    required
+                    placeholder="ITCS"
+                    value="ITCS"
+                  />
+                </label>
+                <label>
+                  Number
+                  <input
+                    type="text"
+                    class="course-number"
+                    required
+                    placeholder="4145"
+                    value="4145"
+                  />
+                </label>
+                <label>
+                  Name
+                  <input
+                    type="text"
+                    class="course-name"
+                    required
+                    placeholder="Parallel Programming"
+                    value="Parallel Programming"
+                  />
+                </label>
+                <label>
+                  Reason
+                  <input
+                    type="text"
+                    class="course-reason"
+                    required
+                    placeholder="Why you are taking this course"
+                    value="Another required course for my degree."
+                  />
+                </label>
+              </div>
+              <div class="course-row">
+                <label>
+                  Department
+                  <input
+                    type="text"
+                    class="course-department"
+                    required
+                    placeholder="ITIS"
+                    value="ITIS"
+                  />
+                </label>
+                <label>
+                  Number
+                  <input
+                    type="text"
+                    class="course-number"
+                    required
+                    placeholder="3200"
+                    value="3200"
+                  />
+                </label>
+                <label>
+                  Name
+                  <input
+                    type="text"
+                    class="course-name"
+                    required
+                    placeholder="Intro to Info Security and Privacy"
+                    value="Intro to Info Security and Privacy"
+                  />
+                </label>
+                <label>
+                  Reason
+                  <input
+                    type="text"
+                    class="course-reason"
+                    required
+                    placeholder="Why you are taking this course"
+                    value="A course I needed to take to fill some credit requirements. I thought the topic would be interesting and I haven't had much of a focus on security throughout my time in CS, so I thought it'd be important to get some knowledge in this area."
+                  />
+                </label>
+              </div>
+              <div class="course-row">
+                <label>
+                  Department
+                  <input
+                    type="text"
+                    class="course-department"
+                    required
+                    placeholder="ITIS"
+                    value="ITIS"
+                  />
+                </label>
+                <label>
+                  Number
+                  <input
+                    type="text"
+                    class="course-number"
+                    required
+                    placeholder="3246"
+                    value="3246"
+                  />
+                </label>
+                <label>
+                  Name
+                  <input
+                    type="text"
+                    class="course-name"
+                    required
+                    placeholder="IT Infrastructure and Security"
+                    value="IT Infrastructure and Security"
+                  />
+                </label>
+                <label>
+                  Reason
+                  <input
+                    type="text"
+                    class="course-reason"
+                    required
+                    placeholder="Why you are taking this course"
+                    value="Another course I needed for credit requirements. I'm very familiar with much of the content in this course but I thought it'd be good to take an easy class since I would have to balance school with my own personal life, projects, and work; along with job hunting."
+                  />
+                </label>
+              </div>
+            </div>
+            <button id="add-course" type="button">Add Course</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Quote</legend>
+            <label for="quoteText">Quote *</label>
+            <textarea
+              id="quoteText"
+              name="quoteText"
+              required
+              placeholder="Add your favorite quote"
+            >
+Do the best you can until you know better. Then when you know better, do better.</textarea
+            >
+
+            <label for="quoteAuthor">Quote Author *</label>
+            <input
+              id="quoteAuthor"
+              name="quoteAuthor"
+              type="text"
+              required
+              placeholder="Quote author"
+              value="Maya Angelou"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Optional</legend>
+            <label for="funnyThing">Funny Thing</label>
+            <textarea
+              id="funnyThing"
+              name="funnyThing"
+              placeholder="Optional funny fact"
+            >
+I'm the kind of guy that knows a little bit about everything but a lot about nothing. Unless it's music, movies, or hollywood; then I know nothing.</textarea
+            >
+
+            <label for="shareThing">Something I Would Like to Share</label>
+            <textarea
+              id="shareThing"
+              name="shareThing"
+              placeholder="Optional additional share"
+            >
+I'm very much washed now but I spent a few months as a B-tier professional Overwatch player back in highschool. I also helped with the preliminary research for an aphid resistant strain of rice while at a summer internship in highschool.</textarea
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>Links (5 Required)</legend>
+            <label for="link1Name">Link 1 Name *</label>
+            <input
+              id="link1Name"
+              name="link1Name"
+              type="text"
+              required
+              placeholder="GitHub"
+              value="GitHub"
+            />
+            <label for="link1Url">Link 1 URL *</label>
+            <input
+              id="link1Url"
+              name="link1Url"
+              type="url"
+              required
+              placeholder="https://..."
+              value="https://github.com/Atom1cWinter/"
+            />
+
+            <label for="link2Name">Link 2 Name *</label>
+            <input
+              id="link2Name"
+              name="link2Name"
+              type="text"
+              required
+              placeholder="GitHub.io"
+              value="GitHub.io"
+            />
+            <label for="link2Url">Link 2 URL *</label>
+            <input
+              id="link2Url"
+              name="link2Url"
+              type="url"
+              required
+              placeholder="https://..."
+              value="https://atom1cwinter.github.io/"
+            />
+
+            <label for="link3Name">Link 3 Name *</label>
+            <input
+              id="link3Name"
+              name="link3Name"
+              type="text"
+              required
+              placeholder="CLT Site"
+              value="CLT Site"
+            />
+            <label for="link3Url">Link 3 URL *</label>
+            <input
+              id="link3Url"
+              name="link3Url"
+              type="url"
+              required
+              placeholder="https://..."
+              value="https://webpages.charlotte.edu/cdingle1/"
+            />
+
+            <label for="link4Name">Link 4 Name *</label>
+            <input
+              id="link4Name"
+              name="link4Name"
+              type="text"
+              required
+              placeholder="LinkedIn"
+              value="LinkedIn"
+            />
+            <label for="link4Url">Link 4 URL *</label>
+            <input
+              id="link4Url"
+              name="link4Url"
+              type="url"
+              required
+              placeholder="https://..."
+              value="https://www.linkedin.com/in/cameron-dingle-266036296/"
+            />
+
+            <label for="link5Name">Link 5 Name *</label>
+            <input
+              id="link5Name"
+              name="link5Name"
+              type="text"
+              required
+              placeholder="ITIS 3135"
+              value="ITIS 3135"
+            />
+            <label for="link5Url">Link 5 URL *</label>
+            <input
+              id="link5Url"
+              name="link5Url"
+              type="url"
+              required
+              placeholder="https://..."
+              value="https://atom1cwinter.github.io/itis3135/"
+            />
+          </fieldset>
+
+          <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button" id="clear-btn">Clear</button>
+            <button type="button" id="generate-json-btn">Generate JSON</button>
+            <button type="button" id="generate-html-btn">Generate HTML</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="intro-output-view" hidden>
+        <h3 class="sr-only">Generated introduction output</h3>
+      </section>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/introduction.js"></script>
+    <script src="scripts/generate_json.js"></script>
+    <script src="scripts/generate_html.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+  </body>
+</html>

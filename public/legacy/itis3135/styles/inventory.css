@@ -1,0 +1,55 @@
+span {
+  display: inline-block;
+}
+
+tr[class="read"] {
+  background-image: linear-gradient(#e2efda, #c6e0b4);
+}
+tr[class="to-read"] {
+  background-image: linear-gradient(#fff2cc, #ffe699);
+}
+tr[class="in-progress"] {
+  background-image: linear-gradient(#ddebf7, #bdd7ee);
+}
+
+tr[class="to-read"] span[class="status"] {
+  border: 1px solid #bf9000;
+  background-image: linear-gradient(#fff, #ffe699);
+}
+tr[class="read"] span[class="status"] {
+  border: 1px solid #548235;
+  background-image: linear-gradient(#fff, #c6e0b4);
+}
+tr[class="in-progress"] span[class="status"] {
+  border: 1px solid #2f5597;
+  background-image: linear-gradient(#fff, #bdd7ee);
+}
+
+span[class="status"],
+span[class^="rate"] {
+  height: 25px;
+  width: 100px;
+  padding: 5px;
+}
+
+span[class^="rate"] > span {
+  border: 1px solid #333;
+  border-radius: 50%;
+  margin: 2px;
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+}
+
+span[class~="one"] span:nth-child(1) {
+  background-image: linear-gradient(#ffc000, #ed7d31);
+}
+
+span[class~="two"] span:nth-child(1),
+span[class~="two"] span:nth-child(2) {
+  background-image: linear-gradient(#ffc000, #ed7d31);
+}
+
+span[class~="three"] span {
+  background-image: linear-gradient(#ffc000, #ed7d31);
+}

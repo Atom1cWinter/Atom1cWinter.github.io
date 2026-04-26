@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Owlish Owl Weather Wisdom</title>
+    <link rel="stylesheet" href="styles/default.css" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div data-include="components/header.html"></div>
+    <main class="page-shell widget-page weather-page" id="app-container">
+      <section class="widget-card hero-card">
+        <p class="eyebrow">Weather snapshot</p>
+        <h1>Owlish Owl Weather Wisdom</h1>
+        <p class="page-summary">
+          Pick a city to fetch current weather from the freeCodeCamp proxy.
+        </p>
+
+        <div class="controls weather-controls">
+          <label class="field" for="city-select">
+            <span>Choose a city</span>
+            <select id="city-select">
+              <option value="">Select one</option>
+              <option value="new york">New York</option>
+              <option value="los angeles">Los Angeles</option>
+              <option value="chicago">Chicago</option>
+              <option value="paris">Paris</option>
+              <option value="tokyo">Tokyo</option>
+              <option value="london">London</option>
+            </select>
+          </label>
+          <button id="get-weather-btn" class="button-primary" type="button">
+            Get Weather
+          </button>
+        </div>
+      </section>
+
+      <section
+        id="weather-display"
+        class="widget-card weather-panel"
+        aria-live="polite"
+      >
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Current conditions</p>
+            <h2 id="location">Select a city</h2>
+            <p id="weather-status" class="panel-note">
+              Weather data will appear here.
+            </p>
+          </div>
+          <img id="weather-icon" src="about:blank" alt="Weather icon" />
+        </div>
+
+        <div class="weather-grid">
+          <article>
+            <h3 class="visually-hidden">Condition</h3>
+            <span class="metric-label">Condition</span>
+            <strong id="weather-main">N/A</strong>
+          </article>
+          <article>
+            <h3 class="visually-hidden">Temperature</h3>
+            <span class="metric-label">Temperature</span>
+            <strong><span id="main-temperature">N/A</span>°C</strong>
+          </article>
+          <article>
+            <h3 class="visually-hidden">Feels Like</h3>
+            <span class="metric-label">Feels like</span>
+            <strong><span id="feels-like">N/A</span>°C</strong>
+          </article>
+          <article>
+            <h3 class="visually-hidden">Humidity</h3>
+            <span class="metric-label">Humidity</span>
+            <strong><span id="humidity">N/A</span>%</strong>
+          </article>
+          <article>
+            <h3 class="visually-hidden">Wind Speed</h3>
+            <span class="metric-label">Wind speed</span>
+            <strong><span id="wind">N/A</span> m/s</strong>
+          </article>
+          <article>
+            <h3 class="visually-hidden">Wind Gust</h3>
+            <span class="metric-label">Wind gust</span>
+            <strong><span id="wind-gust">N/A</span> m/s</strong>
+          </article>
+        </div>
+      </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/weather.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+  </body>
+</html>

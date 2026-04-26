@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charlotte Home</title>
+
+    <link rel="stylesheet" href="styles/project.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div data-include="./components/header.html"></div>
+
+    <main>
+      <h2>Welcome to the Stream</h2>
+      <p class="homepage">
+        Hi! I'm Charlotteow_ and I'm a GM Mercy player absolutely
+        <i>grinding</i> through the ladder.
+      </p>
+
+      <p>
+        Thanks for joining me on the grind and welcome to the stream! Let's have
+        some fun!
+      </p>
+
+      <section id="stream-planner-banner" aria-labelledby="planner-heading">
+        <h3 id="planner-heading">Plan Your Next Stream Drop-In</h3>
+        <p>
+          Filter by stream type, choose your time zone, and see a live countdown
+          to the next session.
+        </p>
+
+        <div class="planner-controls">
+          <div
+            class="planner-filter"
+            role="group"
+            aria-label="Filter stream type"
+          >
+            <button class="filter-chip active" data-filter="all" type="button">
+              All
+            </button>
+            <button class="filter-chip" data-filter="competitive" type="button">
+              Competitive
+            </button>
+            <button class="filter-chip" data-filter="vod" type="button">
+              VOD Review
+            </button>
+            <button class="filter-chip" data-filter="community" type="button">
+              Community
+            </button>
+          </div>
+
+          <label class="planner-timezone" for="timezone-select">
+            Show times in:
+            <select id="timezone-select" name="timezone-select">
+              <option value="America/New_York">Eastern Time</option>
+              <option value="America/Chicago">Central Time</option>
+              <option value="America/Denver">Mountain Time</option>
+              <option value="America/Los_Angeles">Pacific Time</option>
+              <option value="UTC">UTC</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="planner-status">
+          <p id="next-stream-title">Next stream:</p>
+          <p id="next-stream-time">Loading schedule...</p>
+          <p id="countdown-timer" aria-live="polite">
+            Calculating countdown...
+          </p>
+        </div>
+
+        <ul id="upcoming-streams" aria-label="Upcoming streams"></ul>
+      </section>
+
+      <div class="homepage-video">
+        <iframe
+          src="https://youtube.com/embed/X4_OwCYr0Zc?si=V43aaY8tdUD7ap_A"
+          title="2021 | Mercy Montage (Overwatch)"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          allowfullscreen
+        ></iframe>
+      </div>
+      <section class="social-links">
+        <p class="homepage">
+          I throw together random youtube montages too! Here's one of my old
+          ones!
+        </p>
+        <h3>Follow Charlotte!</h3>
+        <div class="social-icons">
+          <a
+            href="https://www.twitch.tv/charlotteow_"
+            target="_blank"
+            title="Twitch"
+            ><i class="fa-brands fa-twitch"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/@Sincitycharotte"
+            target="_blank"
+            title="YouTube"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a href="https://tiktok.com" target="_blank" title="TikTok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/stream-planner.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+  </body>
+</html>

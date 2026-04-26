@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overwatch Hobby Site | Cameron Dingle</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <style>
+      /* I did copy the initial stylesheet settings directly from google Gemini */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 75%;
+        /* Increased max-width for better balance */
+        max-width: 1500px;
+        margin: 0 auto;
+      }
+
+      .float-left {
+        float: left;
+        margin-right: 20px;
+      }
+
+      .float-right {
+        float: right;
+        margin-left: 20px;
+        clear: right;
+      }
+
+      .center-fig {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .right-fig {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .small-img {
+        width: 250px;
+        height: auto;
+      }
+
+      .large-img {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+      }
+
+      .video-frame {
+        border: none;
+        width: 100%;
+        max-width: 1080px;
+        aspect-ratio: 16 / 9;
+      }
+
+      body {
+        /* Background: Hero Blue (#218ffe) | Outer: Deep Royal Navy (#1a2e47) */
+        background: radial-gradient(circle at center, #218ffe 0%, #1a2e47 100%);
+        background-attachment: fixed;
+        color: #ffffff;
+        font-family: "Century Gothic", AppleGothic, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        /* Added padding to ensure content doesn't touch the screen edge on mobile */
+        padding: 0 10px;
+      }
+
+      header,
+      main,
+      footer {
+        padding: 20px;
+        text-align: left;
+      }
+
+      header {
+        border-bottom: 3px solid #f99e1a; /* Repetition: Brand Orange  */
+      }
+
+      h1 {
+        color: #f99e1a;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0 0 10px 0;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+
+      a {
+        color: #f99e1a;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #ffcc80;
+        text-decoration: underline;
+      }
+
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #f99e1a;
+        border-bottom: 2px solid #f99e1a;
+        text-decoration: none;
+      }
+
+      nav span {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      main {
+        /* 2. Contrast: Stark White panel keeps content readable  */
+        background: #ffffff;
+        color: #1e293b;
+        margin: 20px 0;
+        border-radius: 4px;
+        /* 3. Proximity: Bold accent stripe groups the content  */
+        border-left: 8px solid #f99e1a;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      h2 {
+        color: #218ffe;
+        text-transform: uppercase;
+        border-left: 5px solid #f99e1a;
+        padding-left: 15px;
+        margin-top: 0;
+      }
+
+      figure {
+        /* 4. Alignment: Consistent layout for media items  */
+        border: 1px solid #cbd5e1;
+        background-color: #f8fafc;
+        padding: 15px;
+        margin: 10px 0 20px 20px;
+        width: fit-content;
+        max-width: 100%;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border: 1px solid #cbd5e1;
+      }
+
+      footer {
+        font-size: 0.9em;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: auto;
+        color: #cbd5e1;
+      }
+
+      footer a {
+        color: #f99e1a;
+        font-weight: bold;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        color: #ffffff;
+      }
+
+      .validation p {
+        color: #64748b;
+        font-weight: bold;
+      }
+
+      main section {
+        overflow: auto;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      ul {
+        list-style-position: inside;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Overwatch Scrims</h1>
+        <nav>
+          <a href="#" onclick="showSection('what')">What</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('who')">Who</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('when')">When</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('where')">Where</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('how')">How</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('why')">Why</a> <span> ⚔️ </span>
+          <a href="#" onclick="showSection('ai-prompts')">AI Prompts</a>
+        </nav>
+      </header>
+
+      <main>
+        <section id="what">
+          <h2>What are Overwatch Scrims?</h2>
+          <p>
+            Overwatch Scrims are casual practice games, or scrimmages, between
+            two premade teams in a private, custom game. They're a fun way of
+            getting a true, team competitive experience in OW without having to
+            worry about all the randomness of matchmaking and the toxicity of
+            ranked, and a phenomenal way to practice and improve your gameplay,
+            skills, and teamwork.
+          </p>
+          <figure>
+            <iframe
+              class="video-frame"
+              src="https://www.youtube.com/embed/bK6MiOWi2mA"
+              title="Overwatch Scrimming Guide"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+              "
+              allowfullscreen
+            ></iframe>
+            <figcaption>
+              An introductory guide to the world of Overwatch scrimming.
+            </figcaption>
+          </figure>
+          <p>
+            Scrims focus heavily on team coordination, communication, and
+            strategy and every player coming into one usually has the goal of
+            improving their gameplay and teamwork. While you're expected to have
+            some level of skill, game knowledge, and familiarity with your
+            role(s) (we'll get into that), scrims are all about practicing,
+            trying new things, and improving, so don't worry about being perfect
+            and just focus on having fun and learning!
+          </p>
+        </section>
+
+        <section id="who" style="display: none">
+          <h2>Who plays Overwatch Scrims?</h2>
+          <p>
+            As long as you enjoy playing Overwatch and want to improve your
+            skills, just about anyone can play scrims! You don't have to a pro
+            player, or even be high ranked, there are scrims for every single
+            rank, role, and skill level so whether you're a Gold 5 flex support
+            or a Champ 1 tank, there are scrims for you! But first, you'll need
+            to know what roles there even are and which one you'll want to play
+            so...
+          </p>
+          <h3>Let's talk about some basic roles:</h3>
+          <p>
+            Depending on if you're playing 5v5 or 6v6, there are 5-6 different
+            roles to choose from and each has their own personal niche within
+            the team. In general, there are 3 main categories, Tanks, Damage,
+            and Support, but each of those has been split up into subroles based
+            on the playstyles of the heroes within them and the different ways
+            they can be played.
+          </p>
+          <ul>
+            <li>
+              <figure
+                class="float-right"
+                style="width: 500px; margin-top: -5px"
+              >
+                <img src="images/reinhardt-01.png" alt="Image of Reinhardt" />
+                <figcaption>
+                  Reinhardt, a main tank hero, is a great example of the
+                  traditional "big, beefy, shieldy" tank playstyle.
+                </figcaption>
+              </figure>
+              <strong>Tank: </strong>These guys are the frontline of the team
+              and their entire responsibility to the team is creating and
+              controlling space on the map. They tend to have a lot of health
+              and abilities that help them mitigate (or reduce/"tank") damage,
+              but they won't tend to have tons of damage at the same time. If
+              you're playing 5v5, you'll only have 1 tank on your while in 6v6,
+              you'll get 2, but each tank will have less health and their
+              abilities will be a little weaker in 6v6 to balance things out.
+              These guys are divided into 2 subroles:
+              <ul>
+                <li>
+                  <strong>Main Tank: </strong> These guys have high health,
+                  low(ish) damage, and usually have a shield. They're the main
+                  thing taking and maintaining space for your team and they tend
+                  to do it through getting into and staying in the enemy teams
+                  face and using their shield to protect themselves and their
+                  teammates.
+                  <ul>
+                    <li><strong>Reinhardt</strong></li>
+                    <li>
+                      <strong>Winston</strong>
+                    </li>
+                    <li>
+                      <strong>Ramattra</strong>
+                    </li>
+                    <li>
+                      <strong>Orisa</strong>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Off Tank: </strong> Compared to main tanks, off tanks
+                  tend to have less overall health and <i>way</i> more damage.
+                  They don't tend to have shields but they do tend to have more
+                  mobility, more damage, and ways of "erasing" damage (like
+                  D.Va's defense matrix, Zarya's bubble, or Roadhog's self heal)
+                  to help keep them alive. They tend to take and maintain space
+                  through the damage their damage output and that being too
+                  close to them can be really dangerous.
+                  <ul>
+                    <li>
+                      <strong>D.Va</strong>
+                    </li>
+                    <li>
+                      <strong>Zarya</strong>
+                    </li>
+                    <li>
+                      <strong>Roadhog</strong>
+                    </li>
+                    <li><strong>Mauga</strong></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <figure class="float-right" style="width: 500px; margin-top: 0px">
+                <img
+                  src="images/sojourn-power-slide.png"
+                  alt="Image of Sojourn"
+                />
+                <figcaption>
+                  Sojourn, a flex damage hero, is a great example of the more
+                  versatile and mobile playstyle of flex damage heroes.
+                </figcaption>
+              </figure>
+              <strong>Damage (DPS): </strong>These are the heroes responsible
+              for dishing out damage to the enemy team and securing kills. They
+              tend to be your most mechanically intense heroes and have a lot of
+              different playstyles, but they tend to be pretty squishy and are
+              easy to kill if they isolate themselves from their team or get
+              caught out of position. They're divided into 2 subroles:
+              <ul>
+                <li>
+                  <strong>Hitscan Damage (HSDPS): </strong>There's a lot of
+                  varience between these heroes, but in general, their main
+                  source of damage will either be a hitscan weapon (where the
+                  projectile is instant and hits exactly where you aim) or will
+                  have a <b><i>very</i></b> fast projectile speed that's nearly
+                  instant. Players filling this role tend to need
+                  <i>very</i> good aim and decent positioning to be effective,
+                  but are huge threats if played well.
+                  <ul>
+                    <li>
+                      <strong>Soldier 76</strong>
+                    </li>
+                    <li>
+                      <strong>Tracer</strong>
+                    </li>
+                    <li>
+                      <strong>Sojourn</strong>
+                    </li>
+                    <li>
+                      <strong>Cassidy</strong>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Flex Damage (FDPS): </strong>These are damage dealers
+                  with a lot more variety in their playstyles and kits. They
+                  don't really have a set method of dealing damage and can be
+                  played in a lot of different ways. Mechanically, they don't
+                  tend to be as intesive as hitscans but they do require more
+                  game knowledge and better positioning to be effective. A good
+                  flex dps can absolutely destroy the enemy team if played well.
+                  <ul>
+                    <li><strong>Genji</strong></li>
+                    <li><strong>Tracer</strong></li>
+                    <li><strong>Pharah</strong></li>
+                    <li><strong>Venture</strong></li>
+                    <li><strong>Vendetta</strong></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <figure class="float-right" style="width: 500px">
+                <img src="images/kiriko.png" alt="Image of Kiriko" />
+                <figcaption>
+                  Kiriko, a flex support hero, is a great example of the more
+                  versatile and utility focused playstyle of flex support
+                  heroes.
+                </figcaption>
+              </figure>
+              <strong>Support: </strong>These are our healers and utility heroes
+              and they're really responsible for keeping the team alive and
+              enabling our teammates to do their jobs. They all have some form
+              of healing (in varying amounts) and some kind of utility to them
+              like speed boost, damage boosts, or invincibility. Just like
+              everything else, they're divided into 2 subroles:
+              <ul>
+                <li>
+                  <strong>Main Support: </strong>These are the supports with the
+                  utility that our team compositions are built around. Their
+                  healing doesn't tend to be the greatest but they more than
+                  make up for it with the strength of their utility.
+                  <ul>
+                    <li><strong>Lucio</strong></li>
+                    <li><strong>Brigitte</strong></li>
+                    <li><strong>Jetpack Cat</strong></li>
+                    <li><strong>Mizuki</strong></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Flex Support: </strong>These are the more versatile
+                  supports who can adapt to different situations to help their
+                  team deal with whatever problems they're dealing with. They
+                  tend to have stronger healing but also tend to either have
+                  less impactful utility or utility that's much more situational
+                  than main supports.
+                  <ul>
+                    <li><strong>Kiriko</strong></li>
+                    <li><strong>Ana</strong></li>
+                    <li><strong>Baptist</strong></li>
+                    <li><strong>Zen</strong></li>
+                    <li><strong>Juno</strong></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            These are all the roles you're gonna see in OW scrims and every
+            single player on a team is going to be able to play
+            <i>at least</i> one of these roles. Some other roles you might see
+            on the team are coaches and subs but not all teams will have those
+            and they're not really necessary to play scrims (but are very
+            helpful to have for learning or as a backup if someone can't make it
+            to a scrim.)
+          </p>
+        </section>
+        <section id="when" style="display: none">
+          <h2>When are Overwatch Scrims?</h2>
+          <p><strong>Short answer:</strong> Whenever you want!</p>
+          <p>
+            <strong>Long answer:</strong> OW scrims can be played whenever two
+            teams agree to play, whenever that might be. They usually tend to be
+            about 2 hours in length but that's not a guarantee and can be
+            shorter or longer, as long as both teams agree. <br />
+            A pretty common time for scrims is in the evening from 8-10pm EST,
+            but there are scrims happening at pretty much all times of the day
+            and teams constantly looking for more scrims to play, so the only
+            real deciding factor for when you a scrim might be is whether you
+            can find a team to scrim when you want to.
+          </p>
+          <figure class="float-right small-img">
+            <img
+              src="images/bueno-thumbs-up-roadhog-overwatch.gif"
+              alt="Roadhog giving a thumbs up with the caption 'Bueno!'"
+            />
+            <figcaption>Beuno!</figcaption>
+          </figure>
+          <p>
+            There are some important rules to keep in mind when it comes to
+            scrimming:
+          </p>
+          <ul>
+            <li>
+              <strong>Respect the opposing team:</strong> Treat the opposing
+              team with respect and don't be toxic
+            </li>
+            <li>
+              <strong>Make sure you are on time:</strong> "On time" means 5
+              minutes early. If you're late, you or you team could be penalized,
+              removed from a tournament or even blacklisted from playing future
+              scrims. If you're more than 15 minutes late, your team will have
+              to forfeit the scrim and the other team can find a new one to play
+            </li>
+            <li>
+              <strong>Respect your team's time: </strong>Scrims tend to be a bit
+              of a commitment, so make sure you're ready and available for the
+              2-6 times a week your team will scrim
+            </li>
+            <li>
+              <strong>Respect your teammates: </strong>Scrims are all about
+              teamwork and working together so make sure that you're respecting
+              your team and are communicating effectively. It's just as
+              important to listen to your teammates as it is to speak up about
+              their mistakes
+            </li>
+          </ul>
+          <p>
+            <b
+              >Breaking any of those rules can be a pretty big problem and can
+              lead to you or your entire team being penalized or removed from
+              future scrims.</b
+            >
+            Scrims are also a pretty tight knit community, so getting
+            blacklisted from one usually means getting blacklisted from others
+            as well
+          </p>
+        </section>
+        <section id="where" style="display: none">
+          <h2>Where are Overwatch Scrims?</h2>
+          <figure class="float-right small-img">
+            <img
+              src="images/ScrimFinderIcon.png"
+              alt="The logo for the Scrim Finder Discord server"
+            />
+            <figcaption>
+              The logo for the Scrim Finder Discord server.
+            </figcaption>
+          </figure>
+          <p>
+            Discord servers are the main "hub" for finding, organizing, and
+            playing scrims. There are <b>tons</b> of them out there, but the
+            main ones you'll want to check out are:
+          </p>
+          <ul>
+            <li>
+              <a href="https://discord.gg/Qt6phMxR">Competitive Overwatch</a>
+            </li>
+            <li>
+              <a href="https://discord.gg/bx4HPZnQ">Overwatch Scrim Finder</a>
+              (My favorite)
+            </li>
+            <li>
+              <a href="https://discord.gg/abcollegiate"
+                >Collegiate Overwatch League</a
+              >
+              (great if you're a college student wanting to play or get into the
+              collegiate scene)
+            </li>
+            <li>
+              <a href="https://discord.gg/overwatchesports"
+                >Overwatch Esports Server</a
+              >
+            </li>
+          </ul>
+          <p>
+            All of these are popular places to find and organize scrims and
+            you'll tend to see people cross-posting scrim requests between each
+            of them anytime they're looking to play, so it's a great idea to
+            just join all of them. They're also great places to ask questions,
+            find teammates, or just generally learn more about the scrim
+            community, competitive overwatch, or tips for your gameplay.
+          </p>
+        </section>
+        <section id="how" style="display: none">
+          <h2>How are Overwatch Scrims played?</h2>
+          <p>
+            Scrims are always played in private, custom lobbies with some pretty
+            set settings for them. That's kind of putting the cart before the
+            horse however. Before we talk about how to play scrims, it's
+            important that we first talk about <b>finding a team</b>.
+            <br /><br />
+            The best way to find a team is to hop into one of the scrimming
+            discords (you can find links to those
+            <a href="#" onclick="showSection('where')">here</a>) and advertize
+            yourself. Unfortunately, though, advertizing for scrims can be
+            pretty confusing if you've never dealt with it so let's go over some
+            things first.
+          </p>
+          <h3>LFT / LFP Posts</h3>
+          <figure>
+            <img
+              src="images/LFTexample.png"
+              alt="An example of a 'Looking for Team' post"
+            />
+            <figcaption>An example of a "Looking for Team" post</figcaption>
+          </figure>
+
+          <p>
+            Confusing right? Let's go through and explain each part of that post
+          </p>
+          <ul>
+            <li>
+              <strong>LFT (Looking For Team): </strong>This means this player is
+              a "free agent" who's looking for a team to join for scrims
+            </li>
+            <li>
+              <strong>HSDPS: </strong>This is just the player advertizing their
+              role. You might see any of the roles mentioned here (make that a
+              link to "who") in this spot instead.
+            </li>
+            <li>
+              <strong>4.3k-4.5k: </strong>This is the player's skill rating and
+              it's a bit confusing at the start. This number can range anywhere
+              from 0-5000, it's based off of their competitive rank, and it
+              represents their "skill level":
+              <ul>
+                <li><strong>0-1.5k: </strong>~Bronze</li>
+                <li><strong>1.5k-2k: </strong>~Silver</li>
+                <li><strong>2k-2.5k: </strong>~Gold</li>
+                <li><strong>2.5k-3k: </strong>~Platinum</li>
+                <li><strong>3k-3.5k: </strong>~Diamond</li>
+                <li><strong>3.5k-4k: </strong>~Masters</li>
+                <li><strong>4k-4.5k: </strong>~Grandmasters</li>
+                <li><strong>4.5k+: </strong> ~Champion or Top 500</li>
+              </ul>
+              <p>
+                The range for your skill rating is whatever experience you have
+                in scrims already. If you've played scrims with a team that's
+                around 4.5k, then you'd put your current skill rating up to the
+                highest you've played against. <br />
+                If you've never played scrims before, you'll just put your
+                current competitive skill rating in this value. <br />Don't
+                worry too much about this value, it's just to give teams an idea
+                of your skill level.
+              </p>
+            </li>
+            <li>
+              <strong>"Soj,Emre,Cass,Bastion...": </strong>This is just a list
+              of this players hero pool and you should just enter any heroes you
+              feel comfortable playing here.
+            </li>
+          </ul>
+          <p>
+            Everything past that is just extra information you want to convey to
+            any teams that look at your post. It can be pretty much anything you
+            want but most players will include any experience they've had, what
+            times they're available, or any other information they think might
+            be relevant.
+          </p>
+          <figure>
+            <img
+              src="images/LFPexample.png"
+              alt="An example of a 'Looking for Players' post"
+            />
+            <figcaption>An example of a "Looking for Players" post</figcaption>
+          </figure>
+          <p>
+            This is pretty similar to what a "Looking for Team" post is, but
+            instead of looking for a team, this is a team looking for a player.
+            Usually, the person making the post is either the team captain (this
+            isn't an official role) or a team's coach (if they happen to have
+            one). We'll go through any important information in this post as
+            well:
+          </p>
+          <ul>
+            <li>
+              <strong>LFP (Looking for Player(s)): </strong> Exactly as it says,
+              it's a team looking for a player(s) to fill whatever spots they're
+              looking for
+            </li>
+            <li>
+              <strong>NA: </strong>This is the region that this team plays in.
+              It's impoortant for when you're playing scrims to be as close to
+              the other players you have as possible to minimize ping and
+              latency being factors in the scrim. It's also really useful for
+              figuring out what times players are available. There are pretty
+              much only 3 regions available: <b>NA</b>, <b>EU</b>, and
+              <b>APAC</b>.
+            </li>
+            <li>
+              <strong>PC: </strong>This is just where the platform a team plays
+              on will go. There are scrims for console players as well so some
+              other things that might go in this field are <b>PC</b>, <b>PS</b>,
+              <b>Xbox</b>, <b>Switch</b>, or <b>Mixed</b> if a team happens to
+              be playing on multiple platforms or with players on different
+              platforms.
+            </li>
+            <li>
+              <strong>Roles Needed: </strong>This is pretty self explanatory
+              too; it's just all of the roles a particular team is looking for.
+              These will be the same roles mentioned in "who" here
+            </li>
+            <li>
+              <strong>Player Criteria: </strong>These are the more specific
+              criteria that a team is looking for in a player. Usually, this
+              will be things like rank, region, availability, and any other
+              expectations a team might have of their players.
+            </li>
+          </ul>
+          <p>
+            Once you've found yourself a team, all that's left is finding a
+            scrim. This will usually be done by your team captain or coach and
+            will usually be done by posting in one of the scrim discords (links
+            to those can be found
+            <a href="#" onclick="showSection('where')">here</a>) with a post
+            that looks something like this:
+          </p>
+          <h4>Finding Scrims (LFS):</h4>
+          <figure>
+            <img
+              src="images/LFSexample.png"
+              alt="An example of a 'Looking for Scrim' post"
+            />
+            <figcaption>An example of a "Looking for Scrim" post</figcaption>
+          </figure>
+          <p>
+            We've already talked about most of the information in this post so
+            I'm not gonna go over it much. The only really important points you
+            need to know from this are the region, the skill rating, and the
+            time. Your team will either make one of these posts when they want
+            to scrim or will respond with a DM to another team's post. Once a
+            scrim is setup, the post will be crossed out or deleted.
+            <br /><br />Once that's all done, it's time to play your scrim! So
+            let's talk about the settings for the match and how to set up the
+            lobby.
+          </p>
+          <h4>Scrim Match Settings</h4>
+          <p>
+            Scrims have a bit of varience in their match settings based off of
+            how many players, what kind of maps are being played, and how many
+            maps are being played. While match settings for scrims are pretty
+            in-depth and <i>very</i> important, there are thankfully import
+            codes available to streamline the process. These are some of the
+            more popular ones:
+          </p>
+          <ul>
+            <li>
+              <strong>DKEEH (ScrimTime): </strong>This is the most popular
+              import code for scrims and is pretty the only one you'll need. It
+              handles just about everything from setting up the lobby to
+              collecting player performance data.
+            </li>
+            <li>
+              <strong>TEYSH (Seita Scrim Lobby): </strong>This is a
+              <i>very</i> dated import code for old scrim lobbies, but you'll
+              occasionally still have some teams using it. Generally, it's best
+              to avoid it though.
+            </li>
+            <li>
+              <strong>OPP1T (ScrimTime Lite): </strong>This is a simplified
+              version of the ScrimTime lobby that doesn't collect as much player
+              performance data and doesn't allow for quite as many spectator
+              slots. Good if you don't have a coach to watch your game or just
+              wanna be able to set up a scrim really easily
+            </li>
+            <li>
+              <strong>A8XVJ (Scrimmie): </strong>This is a newer import code
+              that offers a huge amount of customization and control on the
+              backend for any casters, spectators, or coaches to be able to view
+              information about the match at any real point. It's incredibly
+              powerful and has started to see some use in the OWCS (basically
+              the professional league of OW)
+            </li>
+          </ul>
+          <p>
+            Setting up a scrim with one of these import codes tends to be as
+            easy as going into a custom game, hitting create, clicking settings,
+            and impoting the code in. You can change what maps are being played
+            as well and adjust any other settings that might be relavant for
+            your scrim. <br /><br /><br />And that's it! That's everything
+            you'll need to do to get starting scrimming! Good luck and have fun!
+          </p>
+        </section>
+        <section id="why" style="display: none">
+          <h2>Why play Overwatch Scrims?</h2>
+          <figure class="float-right" style="width: 450px">
+            <img
+              src="images/ScrimModeBild.png"
+              alt="An image of overwatch heroes with the words 'Scrim Mode'"
+            />
+            <figcaption>
+              An image of overwatch heroes with the words 'Scrim Mode'.
+            </figcaption>
+          </figure>
+          <p>
+            Players have a <i>lot</i> of different reasons to participate in
+            scrims, ranging anywhere from just wanting to have fun, to finding
+            friends, to improving their gameplay, to even using it as a stepping
+            stone to go pro. Scrims are a great way of getting a true
+            competitive experience in OW and people come to this community for
+            many different reasons.
+          </p>
+
+          <p>
+            For me, I started scrimming because a friend invited me to start and
+            because it was a good way to improve my gameplay (and stop being so
+            cocky). It also helped me meet some great people and get a bit of
+            time trying out in the OW professional scene. It's brought a lot of
+            great memories to me and a lot of improvements to my skills and
+            mindset over the years.
+          </p>
+          <p>
+            So...no matter what your reason for joining the scrimming community
+            is, you're bound to find others who share your same goals and who
+            can help you reach them. Welcome to the scrimming community; good
+            luck and have fun!
+          </p>
+        </section>
+        <section id="ai-prompts" style="display: none">
+          <h2>AI Prompts</h2>
+          <p>
+            I used google's AI, Gemini, for two main purposes; generating the
+            boilerplate for my index.html file and helping me create the base
+            for my CSS stylesheet. I also used it for editing a screenshot of
+            the OW scrim finder discord's icon (public use and I asked a mod if
+            I could use it) in order to use it as a favicon. <br /><br />
+          </p>
+          <p><strong>Links to chats with AI: </strong></p>
+          <ul>
+            <li>
+              <a href="https://gemini.google.com/share/a81311bbd762"
+                >Chat for boilerplate and CSS (and random questions)</a
+              >
+            </li>
+            <li>
+              <a href="https://gemini.google.com/share/d6519e4bc72e"
+                >Chat for favicon editing</a
+              >
+              <br /><br />
+            </li>
+          </ul>
+          <p><strong>Prompts used for AI:</strong></p>
+          <ul>
+            <li>
+              <strong>Boilerplate and CSS: </strong>"Thanks! The scope of the
+              project is to build a multi-page hobby site as a single html file.
+              Attached is the rubric for the midterm. I'm planning on building
+              the site around a game called Overwatch. There's really only two
+              main things that I'd like your help with. First, I'd like you to
+              create the basic boilerplate for the page. Please use the rubric
+              attached to find the requirements for that boilerplate. I can (and
+              will) fill in all of the information for the page itself in it and
+              I really only need or want you to create the template for it.
+              Second, I'd like your help creating (and eventually modifying) the
+              embedded stylesheet. Like I mentioned, I'm planning on making this
+              site about *something* with Overwatch (I haven't specifically
+              decided yet and I don't need your help making that choice) so I'd
+              like the colorway for the site to be similar to the games colorway
+              as well. There's more I'd like to adjust or change overtime so I'd
+              like to be able to come back here to for your help more as I get
+              further into working on this project. As of right now, the only
+              other thing I know I want for sure in this stylesheet is for the
+              background to have a subtle gradient (preferrably coming out from
+              the center) so the background doesn't look so flat. Outside of
+              that, I'd like to be able to come back and ask you for help with
+              any issues as I have as they arise. Is that all possible?"
+              <br /><br />
+            </li>
+            <li>
+              <strong>Favicon editing: </strong>"I'd like you to take the
+              attached image and edit it to remove everything outside of the
+              white"
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          Designed by
+          <a href="../camerondingledesigns.com/index.html"
+            >Dingle Design Firm</a
+          >
+        </p>
+        <div class="validation">
+          <p>Validation: HTML5 | CSS3 | Accessibility</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      function showSection(sectionId) {
+        // Hide all sections [cite: 37, 49]
+        const sections = document.querySelectorAll("main section");
+        sections.forEach((sec) => (sec.style.display = "none"));
+
+        // Show the selected section
+        document.getElementById(sectionId).style.display = "block";
+      }
+    </script>
+  </body>
+</html>

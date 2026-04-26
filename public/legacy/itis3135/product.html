@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Night Watchman's Library</title>
+    <link rel="stylesheet" href="styles/default.css" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="product-page">
+    <div data-include="components/header.html"></div>
+    <header id="product-header">
+      <img
+        id="product-header-img"
+        src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png"
+        alt="Owl Logo"
+      />
+      <nav id="product-nav-bar">
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#video-section">Observe</a>
+        <a class="nav-link" href="#pricing">Books</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <h1>Expert Gear for Nocturnal Scholars</h1>
+        <form id="form" action="https://www.freecodecamp.org/email-submit">
+          <input
+            name="email"
+            id="email"
+            type="email"
+            placeholder="Enter your email for owl sightings"
+            required
+          />
+          <input id="submit" type="submit" value="Join the Watch" />
+        </form>
+      </section>
+
+      <section id="features">
+        <div class="feature">
+          <h2>Premium Binoculars</h2>
+          <p>See every feather even in the deepest midnight shadows.</p>
+        </div>
+        <div class="feature">
+          <h2>Field Guides</h2>
+          <p>Comprehensive books on every owl species in North America.</p>
+        </div>
+      </section>
+
+      <section id="video-section">
+        <iframe
+          id="video"
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/WvOAV_as7Yc"
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <section id="pricing">
+        <div class="product" id="starter">
+          <div class="level">The Owlet</div>
+          <h2>$15</h2>
+          <p>Monthly Newsletter</p>
+          <p>E-book Guide</p>
+          <button class="btn">Select</button>
+        </div>
+        <div class="product" id="pro">
+          <div class="level">The Great Horned</div>
+          <h2>$45</h2>
+          <p>Hardcover Atlas</p>
+          <p>Night Vision Specs</p>
+          <button class="btn">Select</button>
+        </div>
+      </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+  </body>
+</html>
