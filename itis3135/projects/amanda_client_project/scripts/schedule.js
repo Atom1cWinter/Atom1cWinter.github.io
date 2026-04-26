@@ -48,23 +48,27 @@ $(document).ready(function () {
       });
         } catch (error) {
           console.error("Failed to parse streams JSON:", error);
+          // prettier-ignore
           $("#stream-accordion").html(
-            "<p>Error loading schedule data. Please refresh.</p>",
+            "<p>Error loading schedule data. Please refresh.</p>"
           );
         }
       } else {
         console.error("Failed to load streams.json. Status:", xhr.status);
+
+        // prettier-ignore
         $("#stream-accordion").html(
           "<p>Error: Could not load schedule file (HTTP " +
             xhr.status +
-            ").</p>",
+            ").</p>"
         );
       }
     };
     xhr.onerror = function () {
       console.error("Network error loading streams.json");
+      // prettier-ignore
       $("#stream-accordion").html(
-        "<p>Error: Could not load schedule. Please ensure you are running this on a web server, not from a file path.</p>",
+        "<p>Error: Could not load schedule. Please ensure you are running this on a web server, not from a file path.</p>"
       );
     };
     xhr.send();
