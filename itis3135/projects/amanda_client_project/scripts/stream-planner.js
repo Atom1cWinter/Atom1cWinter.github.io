@@ -17,6 +17,7 @@ async function initializeHomepagePlanner() {
   let nextStreamDate = null;
   let renderPlanner;
 
+  // prettier-ignore
   let streamSlots = [];
   try {
     const response = await fetch("data/streams.json");
@@ -44,6 +45,7 @@ async function initializeHomepagePlanner() {
       map[part.type] = part.value;
     });
 
+    // prettier-ignore
     const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
     // prettier-ignore

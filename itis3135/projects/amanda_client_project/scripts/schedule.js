@@ -1,7 +1,7 @@
 $(document).ready(function () {
   if ($("#stream-accordion").length) {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "../data/streams.json", true);
+    xhr.open("GET", "data/streams.json", true);
     xhr.onload = function () {
       if (xhr.status === 200) {
         try {
