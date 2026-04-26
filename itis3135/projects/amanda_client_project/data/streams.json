@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Competitive Grind",
+    "weekday": 1,
+    "hour": 19,
+    "minute": 0,
+    "endHour": 23,
+    "endMinute": 0,
+    "type": "competitive",
+    "focus": "Role Queue (Support/Tank). Pushing for the next rank!"
+  },
+  {
+    "title": "Viewer VOD Reviews",
+    "weekday": 3,
+    "hour": 18,
+    "minute": 0,
+    "endHour": 21,
+    "endMinute": 0,
+    "type": "vod",
+    "focus": "Submit your replay codes in chat and we'll break down your gameplay to help you improve."
+  },
+  {
+    "title": "Arcade and Community Games",
+    "weekday": 5,
+    "hour": 20,
+    "minute": 0,
+    "endHour": 23,
+    "endMinute": 59,
+    "type": "community",
+    "focus": "Mystery Heroes, Custom Games, and playing with the chat."
+  }
+]

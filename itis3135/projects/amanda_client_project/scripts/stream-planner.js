@@ -1,4 +1,4 @@
-function initializeHomepagePlanner() {
+async function initializeHomepagePlanner() {
   const planner = document.getElementById("stream-planner-banner");
 
   if (!planner) {
@@ -15,38 +15,26 @@ function initializeHomepagePlanner() {
 
   let activeFilter = "all";
   let nextStreamDate = null;
+  let renderPlanner;
 
-  const streamSlots = [
-    {
-      title: "Competitive Grind",
-      weekday: 1,
-      hour: 19,
-      minute: 0,
-      type: "competitive",
-    },
-    {
-      title: "Viewer VOD Reviews",
-      weekday: 3,
-      hour: 18,
-      minute: 0,
-      type: "vod",
-    },
-    {
-      title: "Arcade and Community Games",
-      weekday: 5,
-      hour: 20,
-      minute: 0,
-      type: "community",
-    },
-  ];
+  let streamSlots = [];
+  try {
+    const response = await fetch("data/streams.json");
+    streamSlots = await response.json();
+  } catch (error) {
+    console.error("Failed to load streams.json:", error);
+    countdownOutput.textContent = "Error loading schedule.";
+    return;
+  }
 
+  // prettier-ignore
   function getPartsInTimeZone(date, timeZone) {
     const formatter = new Intl.DateTimeFormat("en-US", {
       timeZone,
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
-      weekday: "short",
+      weekday: "short"
     });
 
     const parts = formatter.formatToParts(date);
@@ -58,11 +46,12 @@ function initializeHomepagePlanner() {
 
     const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+    // prettier-ignore
     return {
       year: Number(map.year),
       month: Number(map.month),
       day: Number(map.day),
-      weekday: weekdays.indexOf(map.weekday),
+      weekday: weekdays.indexOf(map.weekday)
     };
   }
 
@@ -91,13 +80,14 @@ function initializeHomepagePlanner() {
           return;
         }
 
+        // prettier-ignore
         const candidate = zonedTimeToDate(
           etDay.year,
           etDay.month,
           etDay.day,
           slot.hour,
           slot.minute,
-          baseTimezone,
+          baseTimezone
         );
 
         if (candidate > now) {
@@ -110,6 +100,7 @@ function initializeHomepagePlanner() {
     return upcoming;
   }
 
+  // prettier-ignore
   function formatStreamTime(date, timeZone) {
     const formatter = new Intl.DateTimeFormat("en-US", {
       timeZone,
@@ -118,7 +109,7 @@ function initializeHomepagePlanner() {
       day: "numeric",
       hour: "numeric",
       minute: "2-digit",
-      timeZoneName: "short",
+      timeZoneName: "short"
     });
 
     return formatter.format(date);
@@ -147,7 +138,7 @@ function initializeHomepagePlanner() {
     countdownOutput.textContent = `Starts in ${days}d ${hours}h ${minutes}m ${seconds}s`;
   }
 
-  function renderPlanner() {
+  renderPlanner = function renderPlanner() {
     const timezone = timezoneSelect.value;
     const upcoming = getUpcomingStreams(activeFilter);
 
@@ -165,16 +156,17 @@ function initializeHomepagePlanner() {
 
     titleOutput.textContent = `Next stream: ${next.title}`;
     timeOutput.textContent = formatStreamTime(next.start, timezone);
+    // prettier-ignore
     listOutput.innerHTML = rest
       .slice(0, 3)
       .map(
         (slot) =>
-          `<li><strong>${slot.title}</strong><br>${formatStreamTime(slot.start, timezone)}</li>`,
+          `<li><strong>${slot.title}</strong><br>${formatStreamTime(slot.start, timezone)}</li>`
       )
       .join("");
 
     updateCountdown();
-  }
+  };
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
