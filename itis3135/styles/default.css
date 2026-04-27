@@ -102,6 +102,7 @@ figcaption {
 #survey-form select,
 #survey-form textarea {
   width: 100%;
+  box-sizing: border-box;
   border: 1px solid #d8b4fe;
   border-radius: 6px;
   padding: 10px 12px;
@@ -179,6 +180,7 @@ figcaption {
 #intro-form-view select {
   width: 100%;
   max-width: 100%;
+  box-sizing: border-box;
   border: 1px solid #d8b4fe;
   border-radius: 6px;
   padding: 8px 10px;
@@ -225,7 +227,7 @@ figcaption {
   border-radius: 8px;
   padding: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   gap: 8px;
   align-items: end;
 }
@@ -270,7 +272,7 @@ figcaption {
 
 @media (max-width: 700px) {
   .course-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
   }
 
   #intro-form-view #form,
@@ -291,6 +293,7 @@ figcaption {
 .card {
   width: 150px;
   height: 220px;
+  box-sizing: border-box;
   background-color: #fff;
   border-radius: 12px;
   border: 4px solid #d946ef;
@@ -398,6 +401,7 @@ span[class="status"],
 span[class^="rate"] {
   height: 25px;
   width: 100px;
+  box-sizing: border-box;
   padding: 5px;
   border-radius: 999px;
   display: inline-flex;
@@ -411,6 +415,7 @@ span[class^="rate"] > span {
   margin: 2px;
   height: 15px;
   width: 15px;
+  box-sizing: border-box;
   background-color: #fff;
 }
 
@@ -429,7 +434,7 @@ span[class~="three"] span {
 
 #documentation-layout {
   display: grid;
-  grid-template-columns: minmax(200px, 250px) minmax(0, 1fr);
+  grid-template-columns: 250px auto;
   gap: 24px;
   align-items: start;
   margin: 20px 0 30px;
@@ -501,12 +506,13 @@ span[class~="three"] span {
   }
 
   #documentation-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
   }
 
   .documentation-page #navbar {
     position: relative;
     width: 100%;
+    box-sizing: border-box;
     height: auto;
     max-height: none;
     border-right: none;
@@ -535,6 +541,7 @@ body.product-page #product-header {
   position: sticky;
   top: 0;
   width: 100%;
+  box-sizing: border-box;
   margin: 0;
   min-height: 90px;
   display: flex;
@@ -586,6 +593,7 @@ body.product-page #form {
 body.product-page #email {
   padding: 10px;
   width: min(100%, 250px);
+  box-sizing: border-box;
   border-radius: 3px;
   border: 1px solid #d8b4fe;
   background-color: #fff;
@@ -616,6 +624,7 @@ body.product-page #features {
 
 body.product-page .feature {
   width: 100%;
+  box-sizing: border-box;
   max-width: 700px;
   margin-bottom: 0;
   background: #fff;
@@ -651,6 +660,7 @@ body.product-page .product {
   border: 1px solid #d946ef;
   border-radius: 8px;
   width: 250px;
+  box-sizing: border-box;
   text-align: center;
   background: #fff;
   overflow: hidden;
