@@ -1,13 +1,23 @@
 [
   {
-    "title": "Competitive Grind",
-    "weekday": 1,
-    "hour": 19,
+    "title": "Grinding Mercy",
+    "weekday": 2,
+    "hour": 14,
     "minute": 0,
-    "endHour": 23,
+    "endHour": 22,
     "endMinute": 0,
     "type": "competitive",
-    "focus": "Role Queue (Support/Tank). Pushing for the next rank!"
+    "focus": "Keeping up the mercy GRIND!!!"
+  },
+  {
+    "title": "Grinding Mercy",
+    "weekday": 3,
+    "hour": 14,
+    "minute": 0,
+    "endHour": 22,
+    "endMinute": 0,
+    "type": "competitive",
+    "focus": "Keeping up the mercy GRIND!!!"
   },
   {
     "title": "Viewer VOD Reviews",
@@ -17,16 +27,16 @@
     "endHour": 21,
     "endMinute": 0,
     "type": "vod",
-    "focus": "Submit your replay codes in chat and we'll break down your gameplay to help you improve."
+    "focus": "Submit your replay codes in chat and we'll break down your gameplay to help you improve!"
   },
   {
-    "title": "Arcade and Community Games",
-    "weekday": 5,
-    "hour": 20,
+    "title": "Grinding Mercy",
+    "weekday": 4,
+    "hour": 14,
     "minute": 0,
-    "endHour": 23,
-    "endMinute": 59,
-    "type": "community",
-    "focus": "Mystery Heroes, Custom Games, and playing with the chat."
+    "endHour": 22,
+    "endMinute": 0,
+    "type": "competitive",
+    "focus": "Keeping up the mercy GRIND!!!"
   }
 ]

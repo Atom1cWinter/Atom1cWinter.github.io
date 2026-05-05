@@ -87,7 +87,7 @@
 }
 
 /* --- Light Theme Override --- */
-body.light-theme {
+.light-theme {
   --primary-brand: #64ebf6;
   --primary-background: #5b6786;
   --base-background: #e3ddd1;
@@ -97,7 +97,7 @@ body.light-theme {
 }
 
 /* Dark variant options */
-body.dark-midnight-cobalt {
+.dark-midnight-cobalt {
   --primary-brand: #64ebf6;
   --primary-background: #131f2f;
   --base-background: #0b111a;
@@ -106,7 +106,7 @@ body.dark-midnight-cobalt {
   --text-inverted: #f4f9ff;
 }
 
-body.dark-graphite-neon {
+.dark-graphite-neon {
   --primary-brand: #4fe0b6;
   --primary-background: #1c2431;
   --base-background: #111821;
@@ -115,7 +115,7 @@ body.dark-graphite-neon {
   --text-inverted: #f5f8fb;
 }
 
-body.dark-ember-night {
+.dark-ember-night {
   --primary-brand: #ff7a59;
   --primary-background: #2a1f24;
   --base-background: #161014;
@@ -124,7 +124,7 @@ body.dark-ember-night {
   --text-inverted: #fff8f5;
 }
 
-body.dark-frost-slate {
+.dark-frost-slate {
   --primary-brand: #8fd3ff;
   --primary-background: #223447;
   --base-background: #151f2a;
@@ -157,7 +157,7 @@ header {
   border-bottom: 5px solid var(--primary-brand);
 }
 
-header h1 {
+h1 {
   font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -279,7 +279,32 @@ main {
   width: 100%;
 }
 
-main h2 {
+/* Schedule page link contrast tweaks */
+.schedule-page.light-theme main a {
+  color: var(--primary-background);
+  text-decoration: underline;
+}
+
+.schedule-page.light-theme main a:hover,
+.schedule-page.light-theme main a:focus {
+  color: #3f4f6a;
+  outline: none;
+  text-decoration: underline;
+}
+
+.schedule-page:not(.light-theme) main a {
+  color: var(--primary-brand);
+  text-decoration: underline;
+}
+
+.schedule-page:not(.light-theme) main a:hover,
+.schedule-page:not(.light-theme) main a:focus {
+  color: #bffcff;
+  outline: none;
+  text-decoration: underline;
+}
+
+h2 {
   color: var(--text-main);
   border-bottom: 2px solid var(--primary-brand);
   padding-bottom: 10px;
@@ -287,7 +312,7 @@ main h2 {
   text-transform: uppercase;
 }
 
-main h3 {
+h3 {
   margin: 20px 0 10px;
   color: var(--text-main);
 }
@@ -324,9 +349,7 @@ main p {
 
 .social-links h3 {
   margin-bottom: 15px;
-  text-transform: uppercase;
   font-size: 1.2rem;
-  color: var(--text-main);
   opacity: 0.8;
 }
 
@@ -370,7 +393,6 @@ main p {
 }
 
 #stream-planner-banner h3 {
-  margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
@@ -398,7 +420,11 @@ main p {
   cursor: pointer;
 }
 
-.filter-chip.active,
+.filter-chip.active {
+  background-color: var(--primary-brand);
+  color: var(--primary-background);
+}
+
 .filter-chip:hover,
 .filter-chip:focus-visible {
   background-color: var(--primary-brand);
@@ -466,38 +492,79 @@ main p {
   }
 }
 
-/* Gallery Styles */
-#image-gallery {
+/* Store Placeholder Styles */
+.store-placeholder-note {
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary-brand);
+  background-color: rgba(23, 36, 54, 0.9);
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+#merchandise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   margin-top: 20px;
 }
 
-figure {
-  background: var(--base-background);
-  padding: 10px;
-  border-radius: 5px;
+.store-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #111b29;
+  border: 1px solid rgba(100, 235, 246, 0.35);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.store-card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  border-radius: 8px;
+  border: 1px dashed rgba(100, 235, 246, 0.6);
+  background-color: #172436;
   text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-figure img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 3px;
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
+.store-card h3 {
+  margin: 0;
 }
 
-figure img:hover {
-  border-color: var(--primary-brand);
+.store-card p {
+  margin-bottom: 0;
+  opacity: 0.88;
 }
 
-figcaption {
-  margin-top: 10px;
-  font-style: italic;
-  color: var(--text-main);
-  opacity: 0.8;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  #merchandise-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  #merchandise-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Contact Form */
