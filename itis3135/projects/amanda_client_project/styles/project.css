@@ -379,6 +379,10 @@ main p {
   text-align: center;
 }
 
+.homepage-centered {
+  text-align: center;
+}
+
 /* Homepage planner banner */
 #stream-planner-banner {
   margin: 1.5rem 0 1rem;

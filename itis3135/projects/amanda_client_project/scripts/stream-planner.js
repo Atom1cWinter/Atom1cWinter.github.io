@@ -57,12 +57,37 @@ async function initializeHomepagePlanner() {
     };
   }
 
+  // prettier-ignore
   function zonedTimeToDate(year, month, day, hour, minute, timeZone) {
-    const utcGuess = new Date(Date.UTC(year, month - 1, day, hour, minute));
-    const zonedGuess = new Date(utcGuess.toLocaleString("en-US", { timeZone }));
-    const diff = utcGuess.getTime() - zonedGuess.getTime();
+    const utcGuess = Date.UTC(year, month - 1, day, hour, minute);
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(new Date(utcGuess));
 
-    return new Date(utcGuess.getTime() + diff);
+    const map = {};
+
+    parts.forEach((part) => {
+      map[part.type] = part.value;
+    });
+
+    // prettier-ignore
+    const zonedAsUtc = Date.UTC(
+      Number(map.year),
+      Number(map.month) - 1,
+      Number(map.day),
+      Number(map.hour),
+      Number(map.minute),
+      Number(map.second)
+    );
+
+    return new Date(2 * utcGuess - zonedAsUtc);
   }
 
   function getUpcomingStreams(filter) {
